@@ -26,7 +26,7 @@
 Amo estar sempre aprendendo, busco sempre conhecer coisas novas, mas sempre mantendo o pé no chão para fixar bem as tecnologias já aprendidas. Com a programação espero mudar e ajudar as pessoas, facilitando suas rotinas e necessidades... 
 
 ## Alguns dos projetos que coloquei no Pages:
-- [ProjectSpace - JS, HTML, SASS/CSS (Best Porject)](https://anderecc.github.io/ProjectSpace/)</br>
+- [ProjectSpace - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/ProjectSpace/)</br>
 - [ProjectSnap - JS, HTML, CSS (Training skills)](https://anderecc.github.io/ProjectSnap/)</br>
 - [ProjectInfusion - JS, HTML, CSS (Training skills)](https://anderecc.github.io/ProjectInfusion/)</br>
 - [ProjectClipboard - JS, HTML, CSS (Training skills)](https://anderecc.github.io/ProjectClipboard/)</br>
