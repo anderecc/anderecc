@@ -23,7 +23,7 @@
 
 </div></br></br>
 
-Amo estar sempre aprendendo, busco sempre conhecer coisas novas, mas sempre mantendo o pé no chão para fixar bem as tecnologias já aprendidas. Com a programação espero mudar e ajudar as pessoas, facilitando suas rotinas e necessidades... 
+Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, fazendo projetos, assistindos vídeos, fazendos testes e afins. Gosto de me desafiar e na programação o que não falta são desafios :). Com a programação espero mudar e construir meu futuro, aprendo bem rápido e acredito que minha jornada vai ser bem sucedida, espero também ajudar as pessoas, facilitando suas rotinas e necessidades... 
 
 ## Alguns dos projetos que coloquei no Pages:
 - [testFolhaSP - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/testFolhaSP/)</br>
@@ -52,3 +52,7 @@ Amo estar sempre aprendendo, busco sempre conhecer coisas novas, mas sempre mant
 (145,5 horas no total) por: Luiz Otávio Miranda
 - Algoritmo, Lógica de Programação.<br>
 (18 horas no total) por: Leonardo Moura Leitao
+
+## Proximos cursos que irei fazer:
+- Formação Node.js por: Guia do programador, Victor Lima
+- Next.js e React - Curso Completo - Aprenda com Projetos por: Leonardo Moura Leitao
