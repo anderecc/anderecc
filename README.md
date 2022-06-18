@@ -26,10 +26,20 @@
 Amo estar sempre aprendendo, busco sempre conhecer coisas novas, mas sempre mantendo o pé no chão para fixar bem as tecnologias já aprendidas. Com a programação espero mudar e ajudar as pessoas, facilitando suas rotinas e necessidades... 
 
 ## Alguns dos projetos que coloquei no Pages:
+- [testFolhaSP - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/testFolhaSP/)</br>
+- Esse projeto peguei como base no repósitorio [felipefialho/frontend-challenges](https://github.com/felipefialho/frontend-challenges), nele pude treinar bastante o html semântico e manipulação dos elementos pelo sass/css, fixei melhor os conhecimentos com os displays flex e grid, comecei o layout primeiro por mobile, tablet e por fim desktop, deixei ele o mais responsivo que consegui juntando Css e Js, adicionei as funções como o carousel que está funcionando, o menu e o 'voltar ao topo'. 
+
 - [ProjectSpace - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/ProjectSpace/)</br>
+- Esse projeto foi o primeiro projeto (grande) que fiz sozinho, me senti muito orgulhoso por ter 'finalizado', sei que ainda posso melhorar muito o código escrito nele e irei fazer isso quando tiver mais domínio das linguagens. Tentei deixar ele o mais responsivo ao meu alcance com os conhecimentos que tinha...
+- 
 - [ProjectSnap - JS, HTML, CSS (Training skills)](https://anderecc.github.io/ProjectSnap/)</br>
+- Esse projeto também peguei como referencia no [frontendmentor](https://www.frontendmentor.io/challenges), foi muito bom para aprender mais e fixar os conhecimentos em html e css.
+- 
 - [ProjectInfusion - JS, HTML, CSS (Training skills)](https://anderecc.github.io/ProjectInfusion/)</br>
+- Esse é um projeto que fiz no curso do Daniel Tapias Morales, aprendi bastante novas tecnicas e soluções para se usar com Css. Esse projeto foi muito bom para ter mais noção sobre responsividade.
+- 
 - [ProjectClipboard - JS, HTML, CSS (Training skills)](https://anderecc.github.io/ProjectClipboard/)</br>
+- Comecei esse projeto para treinar mais minhas habilidades com html e css, gosto de fazer projetos pequenos assim para fixar melhor e aprender novas formas de manipular os elementos. Muito bom também para treinar o html semântico.
 
 ## Cursos que concluí:
 - Webdesign/ Front-end Fundamentos. HTML e CSS (básico ao avançado) e Javascript (básico). <br>
