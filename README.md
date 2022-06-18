@@ -1,6 +1,6 @@
 
 
-### Olá! Eu me chamo Andeson 🤘🙋‍♂️
+### Olá! Eu me chamo Anderson 🤘🙋‍♂️
 
 [![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andersondb06/)
 [![instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/anderecs)
