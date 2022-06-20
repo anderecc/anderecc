@@ -26,9 +26,9 @@
 Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, fazendo projetos, assistindos vídeos, fazendos testes e afins. Gosto de me desafiar e na programação o que não falta são desafios :). Com a programação espero mudar e construir meu futuro, aprendo bem rápido e acredito que minha jornada vai ser bem sucedida, espero também ajudar as pessoas, facilitando suas rotinas e necessidades... 
 
 ## Alguns dos projetos que coloquei no Pages:
-[testFolhaSP - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/testFolhaSP/)</br>
-- Esse projeto peguei como base no repósitorio [felipefialho/frontend-challenges](https://github.com/felipefialho/frontend-challenges), nele pude treinar bastante o html semântico e manipulação dos elementos pelo sass/css, fixei melhor os conhecimentos com os displays flex e grid, comecei o layout primeiro por mobile, tablet e por fim desktop, deixei ele o mais responsivo que consegui juntando Css e Js, adicionei as funções como o carousel que está funcionando, o menu e o 'voltar ao topo'.
-- 
+[potion E-commerce - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/potionE-commerce/)</br>
+- Esse projeto também peguei como base no repósitorio [felipefialho/frontend-challenges](https://github.com/felipefialho/frontend-challenges), esse projeto foi muito desafiador para mim, mas confesso que amo um desafio, foi muito legal e satisfatório 'finaliza-lo', aprendi muito sobre Js e também aperfeiçoei mais minha lógica. Foi muito legal fazer as funcionalidades e ve-las funcionando, como o menu com animações, a quantidade de itens no carrinho, a ligthbox quando clica em um produto, escolher a quantidade e adicionar no carrinho, buscar os items selecionados e mostrar para o usuário, fiquei muito orgulhoso com o resultado que tive nesse projeto.
+
 [testFolhaSP - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/testFolhaSP/)</br>
 - Esse projeto peguei como base no repósitorio [felipefialho/frontend-challenges](https://github.com/felipefialho/frontend-challenges), nele pude treinar bastante o html semântico e manipulação dos elementos pelo sass/css, fixei melhor os conhecimentos com os displays flex e grid, comecei o layout primeiro por mobile, tablet e por fim desktop, deixei ele o mais responsivo que consegui juntando Css e Js, adicionei as funções como o carousel que está funcionando, o menu e o 'voltar ao topo'. 
 
