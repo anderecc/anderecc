@@ -30,7 +30,10 @@ Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, f
 - Esse projeto também peguei como base no repósitorio [felipefialho/frontend-challenges](https://github.com/felipefialho/frontend-challenges), esse projeto foi muito desafiador para mim, mas confesso que amo um desafio, foi muito legal e satisfatório 'finaliza-lo', aprendi muito sobre Js e também aperfeiçoei mais minha lógica. Foi muito legal fazer as funcionalidades e ve-las funcionando, como o menu com animações, a quantidade de itens no carrinho, a ligthbox quando clica em um produto, escolher a quantidade e adicionar no carrinho, buscar os items selecionados e mostrar para o usuário, fiquei muito orgulhoso com o resultado que tive nesse projeto.
 
 [testFolhaSP - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/testFolhaSP/)</br>
-- Esse projeto peguei como base no repósitorio [felipefialho/frontend-challenges](https://github.com/felipefialho/frontend-challenges), nele pude treinar bastante o html semântico e manipulação dos elementos pelo sass/css, fixei melhor os conhecimentos com os displays flex e grid, comecei o layout primeiro por mobile, tablet e por fim desktop, deixei ele o mais responsivo que consegui juntando Css e Js, adicionei as funções como o carousel que está funcionando, o menu e o 'voltar ao topo'. 
+- Esse projeto peguei como base no repósitorio [felipefialho/frontend-challenges](https://github.com/felipefialho/frontend-challenges), nele pude treinar bastante o html semântico e manipulação dos elementos pelo sass/css, fixei melhor os conhecimentos com os displays flex e grid, comecei o layout primeiro por mobile, tablet e por fim desktop, deixei ele o mais responsivo que consegui juntando Css e Js, adicionei as funções como o carousel que está funcionando, o menu e o 'voltar ao topo'.
+
+[Electrum E-commerce - HTML, SASS (Training skills)](https://anderecc.github.io/Electrum-E-Commerce/)</br>
+- Fiz esse projeto no curso de SCSS/SASS, foi muito legal fazer ele pois aprendi novas tecnicas para manipular os elementos, padronização, aprendi mais sobre HTML semântico, componentes reutilizaveis, fiquei bastante satisfeito com o resultado, ainda pretendo adicionar as funcionalidades com JavaScript como o menu, carrinho, favoritos, login, autenticação e adicionar novos produtos buscando de um JSON as informações...
 
 [ProjectSpace - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/ProjectSpace/)</br>
 - Esse projeto foi o primeiro projeto (grande) que fiz sozinho, me senti muito orgulhoso por ter 'finalizado', sei que ainda posso melhorar muito o código escrito nele e irei fazer isso quando tiver mais domínio das linguagens. Tentei deixar ele o mais responsivo ao meu alcance com os conhecimentos que tinha...
@@ -41,8 +44,7 @@ Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, f
 [ProjectInfusion - JS, HTML, CSS (Training skills)](https://anderecc.github.io/ProjectInfusion/)</br>
 - Esse é um projeto que fiz no curso do Daniel Tapias Morales, aprendi bastante novas tecnicas e soluções para se usar com Css. Esse projeto foi muito bom para ter mais noção sobre responsividade.
 
-[ProjectClipboard - JS, HTML, CSS (Training skills)](https://anderecc.github.io/ProjectClipboard/)</br>
-- Comecei esse projeto para treinar mais minhas habilidades com html e css, gosto de fazer projetos pequenos assim para fixar melhor e aprender novas formas de manipular os elementos. Muito bom também para treinar o html semântico.
+
 
 ## Cursos que concluí:
 - Webdesign/ Front-end Fundamentos. HTML e CSS (básico ao avançado) e Javascript (básico). <br>
