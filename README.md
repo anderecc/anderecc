@@ -23,7 +23,7 @@
 
 </div></br></br>
 
-Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, fazendo projetos, assistindos vídeos, fazendos testes e afins. Gosto de me desafiar e na programação o que não falta são desafios :). Com a programação espero mudar e construir meu futuro, aprendo bem rápido e acredito que minha jornada vai ser bem sucedida, espero também ajudar as pessoas, facilitando suas rotinas e necessidades... 
+Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, fazendo projetos, assistindos vídeos, fazendo testes e afins. Gosto de me desafiar e na programação o que não falta são desafios :). Com a programação espero mudar e construir meu futuro, aprendo bem rápido e acredito que minha jornada vai ser bem sucedida, espero também ajudar as pessoas, facilitando suas rotinas e necessidades... 
 
 ## Alguns dos projetos que coloquei no Pages:
 [potion E-commerce - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/potionE-commerce/)</br>
