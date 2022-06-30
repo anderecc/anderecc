@@ -26,6 +26,9 @@
 Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, fazendo projetos, assistindos vídeos, fazendo testes e afins. Gosto de me desafiar e na programação o que não falta são desafios :). Com a programação espero mudar e construir meu futuro, aprendo bem rápido e acredito que minha jornada vai ser bem sucedida, espero também ajudar as pessoas, facilitando suas rotinas e necessidades... 
 
 ## Alguns dos projetos que coloquei no Pages:
+[sneaker E-commerce - JS, HTML, SASS/CSS, WebPack](https://anderecc.github.io/potionE-commerce/)</br>
+- Esse projeto também peguei como referencia no [frontendmentor](https://www.frontendmentor.io/challenges), achei que teria mais deificuldades em terminar esse projeto, quando comecei ele não fiquei tão perdido no que deveria fazer e por onde fazer, gostei muito e fiquei muito satisfeito com o resultado que obtive. Me ajudou bastante na minha lógica e a usar Js mais limpo, tentei reaproveitar o máximo de código que consegui, usei o webpack para me organizar melhor, separando as funções de cada componente da página, com o SASS usei a arquitetura SMACSS para também me organizar melhor e reaproveitar códigos...
+
 [potion E-commerce - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/potionE-commerce/)</br>
 - Esse projeto também peguei como base no repósitorio [felipefialho/frontend-challenges](https://github.com/felipefialho/frontend-challenges), esse projeto foi muito desafiador para mim, mas confesso que amo um desafio, foi muito legal e satisfatório 'finaliza-lo', aprendi muito sobre Js e também aperfeiçoei mais minha lógica. Foi muito legal fazer as funcionalidades e ve-las funcionando, como o menu com animações, a quantidade de itens no carrinho, a ligthbox quando clica em um produto, escolher a quantidade e adicionar no carrinho, buscar os items selecionados e mostrar para o usuário, fiquei muito orgulhoso com o resultado que tive nesse projeto.
 
