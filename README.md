@@ -60,7 +60,9 @@ Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, f
 (12,5 horas no total) por: Matheus Battisti.
 
 - Algoritmo, Lógica de Programação.<br>
-(18 horas no total) por: Leonardo Moura Leitao, Cod3r.
+(18 horas no total) por: Leonardo Moura Leitao, Cod3r.<br>
+
+-  JavaScript30 por [WES BOS](https://javascript30.com/).
 
 ## Cursos que estou fazendo no momento:
 - Javascript e TypeScript - (Full Stack) - Node, Express, noSQL, React, hooks, Redux, Design Patterns.<br>
