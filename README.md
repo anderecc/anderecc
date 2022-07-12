@@ -51,20 +51,32 @@ Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, f
 
 ## Cursos que concluí:
 - Webdesign/ Front-end Fundamentos. HTML e CSS (básico ao avançado) e Javascript (básico). <br>
-(54,5 horas no total) por: Daniel Tapias Morales
+(54,5 horas no total) por: Daniel Tapias Morales.
 
 - Git e GitHub do básico ao avançado. <br>
-(8,5 horas no total) por: Matheus Battisti
+(8,5 horas no total) por: Matheus Battisti.
 
 - SASS e SCSS do básico ao avançado. <br>
-(12,5 horas no total) por: Matheus Battisti
+(12,5 horas no total) por: Matheus Battisti.
+
+- Algoritmo, Lógica de Programação.<br>
+(18 horas no total) por: Leonardo Moura Leitao, Cod3r.
 
 ## Cursos que estou fazendo no momento:
 - Javascript e TypeScript - (Full Stack) - Node, Express, noSQL, React, hooks, Redux, Design Patterns.<br>
-(145,5 horas no total) por: Luiz Otávio Miranda
-- Algoritmo, Lógica de Programação.<br>
-(18 horas no total) por: Leonardo Moura Leitao
+(145,5 horas no total) por: Luiz Otávio Miranda.
+
+- Next.js e React - Curso Completo - Aprenda com Projetos.<br>
+(28,5 horas no total) por: Leonardo Moura Leitao, Cod3r.
+
+-JavaScript Funcional e Reativo - PENSE como um Dev JS.<br>
+(17 horas no total) por: Leonardo Moura Leitao, Cod3r.
+
+
 
 ## Proximos cursos que irei fazer:
-- Formação Node.js por: Guia do programador, Victor Lima
-- Next.js e React - Curso Completo - Aprenda com Projetos por: Leonardo Moura Leitao
+- Formação Node.js por: Guia do programador, Victor Lima.<br>
+- LGPD: Política de Privacidade e Proteção de Dados Pessoais, por: Cláudio Dodt.
+
+
+
