@@ -69,7 +69,7 @@ Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, f
 - Next.js e React - Curso Completo - Aprenda com Projetos.<br>
 (28,5 horas no total) por: Leonardo Moura Leitao, Cod3r.
 
--JavaScript Funcional e Reativo - PENSE como um Dev JS.<br>
+- JavaScript Funcional e Reativo - PENSE como um Dev JS.<br>
 (17 horas no total) por: Leonardo Moura Leitao, Cod3r.
 
 
