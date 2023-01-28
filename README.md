@@ -47,6 +47,9 @@ Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, f
 [ProjectInfusion - JS, HTML, CSS (Training skills)](https://anderecc.github.io/ProjectInfusion/)</br>
 - Esse é um projeto que fiz no curso do Daniel Tapias Morales, aprendi bastante novas tecnicas e soluções para se usar com Css. Esse projeto foi muito bom para ter mais noção sobre responsividade.
 
+[ProjectFylo - HTML, CSS (Training skills)](https://anderecc.github.io/fylo-html-responsive-page/)</br>
+- Projeto foi pego como base no FrontEnd Mentor.
+
 
 
 ## Cursos que concluí:
