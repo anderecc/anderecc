@@ -25,30 +25,12 @@
 
 Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, fazendo projetos, assistindos vídeos, fazendo testes e afins. Gosto de me desafiar e na programação o que não falta são desafios :). Com a programação espero mudar e construir meu futuro, aprendo bem rápido e acredito que minha jornada vai ser bem sucedida, espero também ajudar as pessoas, facilitando suas rotinas e necessidades... 
 
-## Alguns dos projetos que coloquei no Pages:
-[sneaker E-commerce - JS, HTML, SASS/CSS, WebPack](https://anderecc.github.io/sneakerE-commerce/)</br>
-- Esse projeto também peguei como referencia no frontendmentor, achei que teria mais dificuldades em terminar esse projeto, quando comecei ele não fiquei tão perdido no que deveria fazer e por onde fazer, gostei muito e fiquei bastante satisfeito com o resultado que obtive. Me ajudou bastante na minha lógica e a usar Js mais limpo, tentei reaproveitar o máximo de código que consegui, usei o webpack para me organizar melhor, separando as funções de cada componente da página, com o SASS usei a arquitetura SMACSS para também me organizar melhor e reaproveitar códigos...
+## Acesse meus projetos em:
+[Projetos com Javascript](https://anderecc.github.io/projetos-javascript/)</br>
+- Esses são alguns de meus projetos que subi para o pages, alguns eu utilizei chamadas de API, como API de conversão de moeda, API de imagens, API do dicionario de inglês, entre outras, temos também alguns projetos inspirados em e-commerce, onde podemos ver o carrinho de compras, adicionar itens, remover itens, visualizar e buscar por itens. </br>
 
-[potion E-commerce - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/potionE-commerce/)</br>
-- Esse projeto também peguei como base no repositório felipefialho/frontend-challenges, esse projeto foi muito desafiador para mim, mas confesso que amo um desafio, foi muito legal e satisfatório 'finalizá-lo', aprendi muito sobre Js e também aperfeiçoei mais minha lógica. Foi muito legal fazer as funcionalidades e vê-las funcionando, como o menu com animações, a quantidade de itens no carrinho, a ligthbox quando clica em um produto, escolher a quantidade e adicionar no carrinho, buscar os itens selecionados e mostrar para o usuário, fiquei muito orgulhoso com o resultado que tive nesse projeto.
-
-[testFolhaSP - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/testFolhaSP/)</br>
-- Esse projeto peguei como base no repositório felipefialho/frontend-challenges, nele pude treinar bastante o html semântico e manipulação dos elementos pelo sass/css, fixei melhor os conhecimentos com os displays flex e grid, comecei o layout primeiro por mobile, tablet e por fim desktop, deixei ele o mais responsivo que consegui juntando Css e Js, adicionei as funções como o carrossel que está funcionando, o menu e o 'voltar ao topo'.
-
-[Electrum E-commerce - HTML, SASS (Training skills)](https://anderecc.github.io/Electrum-E-Commerce/)</br>
-- Fiz esse projeto no curso de SCSS/SASS, foi muito legal fazer ele pois aprendi novas técnicas para manipular os elementos, padronização, aprendi mais sobre HTML semântico, componentes reutilizáveis, fiquei bastante satisfeito com o resultado, ainda pretendo adicionar as funcionalidades com JavaScript como o menu, carrinho, favoritos, login, autenticação e adicionar novos produtos buscando de um JSON as informações...
-
-[ProjectSpace - JS, HTML, SASS/CSS (Completed Project)](https://anderecc.github.io/ProjectSpace/)</br>
-- Esse projeto foi o primeiro projeto (grande) que fiz sozinho, me senti muito orgulhoso por ter 'finalizado', sei que ainda posso melhorar muito o código escrito nele e irei fazer isso quando tiver mais domínio das linguagens. Tentei deixar ele o mais responsivo ao meu alcance com os conhecimentos que tinha...
-
-[ProjectSnap - JS, HTML, CSS (Training skills)](https://anderecc.github.io/ProjectSnap/)</br>
-- Esse projeto também peguei como referencia no frontendmentor, foi muito bom para aprender mais e fixar os conhecimentos em html e css.
-
-[ProjectInfusion - JS, HTML, CSS (Training skills)](https://anderecc.github.io/ProjectInfusion/)</br>
-- Esse é um projeto que fiz no curso do Daniel Tapias Morales, aprendi bastante novas técnicas e soluções para se usar com Css. Esse projeto foi muito bom para ter mais noção sobre responsividade.
-
-[ProjectFylo - HTML, CSS (Training skills)](https://anderecc.github.io/fylo-html-responsive-page/)</br>
-- Projeto foi pego como base no FrontEnd Mentor.
+[Projetos com Html, Css e Sass](https://anderecc.github.io/projetos-html-css-sass/)</br>
+- Esses projetos foram feitos somente com Html, Css e Sass, alguns projetos foram feitos quando ainda estava no inicio de meus estudos na area, outros já com certo conhecimento, em todos aprendi muito, e serviram de mais para fixar os conhecimentos e ter mais noção sobre os elementos e estilização em geral, gosto muito de fazer projetos pequenos assim para me divertir e aprender cada vez mais, sempre tem algo novo para aprender.
 
 
 
