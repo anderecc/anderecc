@@ -48,7 +48,6 @@ Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, f
 - Esse foi um projeto de estudo na qual o usuario pode cadastrar clientes, com o nome do cliente, do seu animal, seu telefone, seu endereço, complemento e referencia, no projeto eu utilizei o Next.js, firebase para autenticação e banco de dados, jose, redux/toolkit, axios e sass. Utilizei a própria API do Next.js e para os mapas foi utilizado a Api da HERE.
  </br>
  
-
 ### Projetos com React
 [Acessar projetos com React](https://anderecc.com.br/projetos/projetos-React)
 - Projetos que foram feitos desde o inicio do aprendizado com React até atualmente, os projetos que mais fiquei satisfeito e que foram mais complexos foram o CoooderUsers e CoooderShop, projetos que fiz totalmente sozinho, errando e aprendendo. </br>
