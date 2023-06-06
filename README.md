@@ -37,10 +37,11 @@ Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, f
 ## Alguns de meus projetos:
 
 ### Projetos full-stack com Api's e banco de dados
-  [Projeto Recboy](https://recboy.vercel.app)
- - Esse projeto eu fiz com o intuito de ajudar alguns amigos que trabalham como entregador, no projeto os usuarios podem fazer o fechamendo do dia, da semana, encerrar a semana e conferir o extrato gerado na página e em PDF. Projeto construído com Next.js , mongoose (mongoDB), jsonwebtoken, jose, axios, redux/toolkit, bcrypt jspdf e sass. Utilizei a API do Next.js para comunicar com o MongoDB. </br>
- [Projeto Locpet](https://locpet.vercel.app)
- - Esse foi um projeto de estudo na qual o usuario pode cadastrar clientes, com o nome do cliente, do seu animal, seu telefone, seu endereço, complemento e referencia, no projeto eu utilizei o Next.js, firebase para autenticação e banco de dados, jose, redux/toolkit, axios e sass. Utilize a própria API do Next.js e para os mapas foi utilizado a Api da HERE.
+[Projeto Recboy](https://recboy.vercel.app)
+- Esse projeto eu fiz com o intuito de ajudar alguns amigos que trabalham como entregador, no projeto os usuarios podem fazer o fechamendo do dia, da semana, encerrar a semana e conferir o extrato gerado na página e em PDF. Projeto construído com Next.js , mongoose (mongoDB), jsonwebtoken, jose, axios, redux/toolkit, bcrypt jspdf e sass. Utilizei a API do Next.js para comunicar com o MongoDB. </br>
+
+[Projeto Locpet](https://locpet.vercel.app)
+- Esse foi um projeto de estudo na qual o usuario pode cadastrar clientes, com o nome do cliente, do seu animal, seu telefone, seu endereço, complemento e referencia, no projeto eu utilizei o Next.js, firebase para autenticação e banco de dados, jose, redux/toolkit, axios e sass. Utilize a própria API do Next.js e para os mapas foi utilizado a Api da HERE.
  </br>
  
 
