@@ -6,11 +6,10 @@
 [![instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/anderecs)
 [![gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:andersondbl06@gmail.com)
 
-  ![Anderecc Languages stats](https://github-readme-stats.vercel.app/api/top-langs/?username=anderecc&layout=compact&theme=dracula)
 ![Anderecc GitHub stats](https://github-readme-stats.vercel.app/api?username=anderecc&rank_icon=github&hide=,issues&show_icons=true&theme=dracula)
 
 ## Tecnologias que eu uso
-
+![Anderecc Languages stats](https://github-readme-stats.vercel.app/api/top-langs/?username=anderecc&layout=compact&theme=dracula)
 <div style="display: flex, gap: 1rem, align-items: center, justify-content: space-between"><br>
   <img align="center" alt="javascript" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
   <img align="center" alt="react" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
