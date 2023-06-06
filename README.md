@@ -54,7 +54,7 @@ Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, f
 - Projetos que foram feitos desde o inicio do aprendizado com React até atualmente, os projetos que mais fiquei satisfeito e que foram mais complexos foram o CoooderUsers e CoooderShop, projetos que fiz totalmente sozinho, errando e aprendendo. </br>
 
 ### Projetos com Javascript
-[Acessar projetos com Javascript](https://anderecc.com.br/projetos/projetos-javascript)</br>
+[Acessar projetos com Javascript](https://anderecc.com.br/projetos/projetos-Javascript)</br>
 - Esses são alguns de meus projetos com Javascript, alguns eu utilizei chamadas de API, como API de conversão de moeda, API de imagens, API do dicionario de inglês, entre outras, temos também alguns projetos inspirados em e-commerce, onde podemos ver o carrinho de compras, adicionar itens, remover itens, visualizar e buscar por itens. </br>
 
 ### Projetos com Html, Css e Sass
