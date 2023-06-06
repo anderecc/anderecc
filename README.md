@@ -34,9 +34,9 @@ Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, f
 [Portfólio Anderson](https://anderecc.com.br)
 - Meu portfólio construído com Next.js, Sass e nodemailer. Projeto foi contruido ainda quando comecei a estudar React e Next.js, estou trabalhando em um novo portfólio mais moderno, bonito e completo.
 
-## Acesse meus projetos em:
+## Alguns de meus projetos:
 
-###Projetos full-stack com Api's e banco de dados
+### Projetos full-stack com Api's e banco de dados
  [recboy](https://recboy.vercel.app)
  - Esse projeto eu fiz com o intuito de ajudar alguns amigos que trabalham como entregador, no projeto os usuarios podem fazer o fechamendo do dia, da semana, encerrar a semana e conferir o extrato gerado na página e em PDF. Projeto construído com Next.js , mongoose (mongoDB), jsonwebtoken, jose, axios, redux/toolkit, bcrypt jspdf e sass. Utilizei a API do Next.js para comunicar com o MongoDB. </br>
  -[locpet](https://locpet.vercel.app)
@@ -44,15 +44,15 @@ Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, f
  - </br>
  
 
-###Projetos com React
+### Projetos com React
 [Acessat projetos com React](https://anderecc.com.br/projetos/projetos-React)
 - Projetos que foram feitos desde o inicio do aprendizado com React até atualmente, os projetos que mais fiquei satisfeito e que foram mais complexos foram o CoooderUsers e CoooderShop, projetos que fiz totalmente sozinho, errando e aprendendo. </br>
 
-###Projetos com Javascript
+### Projetos com Javascript
 [Acessar projetos com Javascript](https://anderecc.com.br/projetos/projetos-javascript)</br>
 - Esses são alguns de meus projetos com Javascript, alguns eu utilizei chamadas de API, como API de conversão de moeda, API de imagens, API do dicionario de inglês, entre outras, temos também alguns projetos inspirados em e-commerce, onde podemos ver o carrinho de compras, adicionar itens, remover itens, visualizar e buscar por itens. </br>
 
-###Projetos com Html, Css e Sass
+### Projetos com Html, Css e Sass
 [Acessar projetos com Html, Css e Sass](https://anderecc.com.br/projetos/projetos-Html-Css-Sass)</br>
 - Esses projetos foram feitos somente com Html, Css e Sass, alguns projetos foram feitos quando ainda estava no inicio de meus estudos na area, outros já com certo conhecimento, em todos aprendi muito, e serviram de mais para fixar os conhecimentos e ter mais noção sobre os elementos e estilização em geral, gosto muito de fazer projetos pequenos assim para me divertir e aprender cada vez mais, sempre tem algo novo para aprender.
 
