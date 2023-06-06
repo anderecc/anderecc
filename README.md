@@ -9,9 +9,9 @@
 ![Anderecc GitHub stats](https://github-readme-stats.vercel.app/api?username=anderecc&rank_icon=github&hide=,issues&show_icons=true&theme=dracula)
 
 ## Tecnologias que eu uso
-<div>
+<div style="display: flex">
   <div>
-    <img alt="ssdsd" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anderecc&layout=compact&theme=dracula" />
+    <img alt="top-langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anderecc&layout=compact&theme=dracula" />
   </div>
   <div>
     <img align="center" alt="javascript" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
