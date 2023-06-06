@@ -25,46 +25,21 @@
 
 Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, fazendo projetos, assistindos vídeos, fazendo testes e afins. Gosto de me desafiar e na programação o que não falta são desafios :). Com a programação espero mudar e construir meu futuro, aprendo bem rápido e acredito que minha jornada vai ser bem sucedida, espero também ajudar as pessoas, facilitando suas rotinas e necessidades... 
 
-## Acesse meus projetos em:
-[Projetos com Javascript](https://anderecc.github.io/projetos-javascript/)</br>
-- Esses são alguns de meus projetos que subi para o pages, alguns eu utilizei chamadas de API, como API de conversão de moeda, API de imagens, API do dicionario de inglês, entre outras, temos também alguns projetos inspirados em e-commerce, onde podemos ver o carrinho de compras, adicionar itens, remover itens, visualizar e buscar por itens. </br>
+# Acesse meu portfólio:
+[Portfólio Anderson](https://anderecc.com.br)
+- Meu portfólio contruido com Next.js, Sass e nodemailer. Projeto foi contruido ainda quando comecei a estudar React e Next.js, estou trabalhando em um novo portfólio mais moderno, bonito e completo.
 
-[Projetos com Html, Css e Sass](https://anderecc.github.io/projetos-html-css-sass/)</br>
+## Acesse meus projetos em:
+[Projetos com React](https://anderecc.com.br/projetos/projetos-React)
+- Projetos que foram feitos desde o inicio do aprendizado com React até atualmente, os projetos que mais fiquei satisfeito e que foram mais complexos foram o CoooderUsers e CooopdersShop, projetos que fiz totalmente sozinho, errando e aprendendo. </br>
+
+[Projetos com Javascript](https://anderecc.com.br/projetos/projetos-javascript)</br>
+- Esses são alguns de meus projetos com Javascript, alguns eu utilizei chamadas de API, como API de conversão de moeda, API de imagens, API do dicionario de inglês, entre outras, temos também alguns projetos inspirados em e-commerce, onde podemos ver o carrinho de compras, adicionar itens, remover itens, visualizar e buscar por itens. </br>
+
+[Projetos com Html, Css e Sass](https://anderecc.com.br/projetos/projetos-Html-Css-Sass)</br>
 - Esses projetos foram feitos somente com Html, Css e Sass, alguns projetos foram feitos quando ainda estava no inicio de meus estudos na area, outros já com certo conhecimento, em todos aprendi muito, e serviram de mais para fixar os conhecimentos e ter mais noção sobre os elementos e estilização em geral, gosto muito de fazer projetos pequenos assim para me divertir e aprender cada vez mais, sempre tem algo novo para aprender.
 
 
-
-
-## Cursos que concluí:
-- Webdesign/ Front-end Fundamentos. HTML e CSS (básico ao avançado) e Javascript (básico). <br>
-(54,5 horas no total) por: Daniel Tapias Morales.
-
-- Git e GitHub do básico ao avançado. <br>
-(8,5 horas no total) por: Matheus Battisti.
-
-- SASS e SCSS do básico ao avançado. <br>
-(12,5 horas no total) por: Matheus Battisti.
-
-- Algoritmo, Lógica de Programação.<br>
-(18 horas no total) por: Leonardo Moura Leitao, Cod3r.<br>
-
--  JavaScript30 por [WES BOS](https://javascript30.com/).
-
-## Cursos que estou fazendo no momento:
-- Javascript e TypeScript - (Full Stack) - Node, Express, noSQL, React, hooks, Redux, Design Patterns.<br>
-(145,5 horas no total) por: Luiz Otávio Miranda.
-
-- Next.js e React - Curso Completo - Aprenda com Projetos.<br>
-(28,5 horas no total) por: Leonardo Moura Leitao, Cod3r.
-
-- JavaScript Funcional e Reativo - PENSE como um Dev JS.<br>
-(17 horas no total) por: Leonardo Moura Leitao, Cod3r.
-
-
-
-## Proximos cursos que irei fazer:
-- Formação Node.js por: Guia do programador, Victor Lima.<br>
-- LGPD: Política de Privacidade e Proteção de Dados Pessoais, por: Cláudio Dodt.
 
 
 
