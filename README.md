@@ -27,7 +27,7 @@ Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, f
 
 # Acesse meu portfólio:
 [Portfólio Anderson](https://anderecc.com.br)
-- Meu portfólio contruido com Next.js, Sass e nodemailer. Projeto foi contruido ainda quando comecei a estudar React e Next.js, estou trabalhando em um novo portfólio mais moderno, bonito e completo.
+- Meu portfólio construído com Next.js, Sass e nodemailer. Projeto foi contruido ainda quando comecei a estudar React e Next.js, estou trabalhando em um novo portfólio mais moderno, bonito e completo.
 
 ## Acesse meus projetos em:
 [Projetos com React](https://anderecc.com.br/projetos/projetos-React)
