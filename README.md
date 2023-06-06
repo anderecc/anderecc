@@ -1,4 +1,9 @@
-
+<style>
+        .container {
+          display: flex;
+          gap: 2rem
+        }
+</style>
 
 ### Olá! Eu me chamo Anderson 🤘🙋‍♂️
 
@@ -9,7 +14,7 @@
 ![Anderecc GitHub stats](https://github-readme-stats.vercel.app/api?username=anderecc&rank_icon=github&hide=,issues&show_icons=true&theme=dracula)
 
 ## Tecnologias que eu uso
-<div style="display: flex">
+<div class="container">
   <div>
     <img alt="top-langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anderecc&layout=compact&theme=dracula" />
   </div>
