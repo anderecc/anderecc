@@ -9,8 +9,8 @@
 ![Anderecc GitHub stats](https://github-readme-stats.vercel.app/api?username=anderecc&rank_icon=github&hide=,issues&show_icons=true&theme=dracula)
 
 ## Tecnologias que eu uso
-![Anderecc Languages stats](https://github-readme-stats.vercel.app/api/top-langs/?username=anderecc&layout=compact&theme=dracula)
 <div style="display: flex, gap: 1rem, align-items: center, justify-content: space-between"><br>
+<img alt="ssdsd" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anderecc&layout=compact&theme=dracula" />
   <img align="center" alt="javascript" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
   <img align="center" alt="react" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
   <img align="center" alt="redux" src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" />
