@@ -34,34 +34,6 @@
 
 Amo estar sempre aprendendo, buscando sempre novos conhecimentos, pesquisando, fazendo projetos, assistindos vídeos, fazendo testes e afins. Gosto de me desafiar e na programação o que não falta são desafios :). Com a programação espero mudar e construir meu futuro, aprendo bem rápido e acredito que minha jornada vai ser bem sucedida, espero também ajudar as pessoas, facilitando suas rotinas e necessidades... 
 
-# Acesse meu portfólio:
-[Portfólio Anderson](https://anderecc.com.br)
-- Meu portfólio construído com Next.js, Sass e nodemailer. Projeto foi contruido ainda quando comecei a estudar React e Next.js, estou trabalhando em um novo portfólio mais moderno, bonito e completo.
-
-## Alguns de meus projetos:
-
-### Projetos full-stack com Api's e banco de dados
-[Projeto Recboy](https://recboy.vercel.app)
-- Esse projeto eu fiz com o intuito de ajudar alguns amigos que trabalham como entregador, no projeto os usuarios podem fazer o fechamendo do dia, da semana, encerrar a semana e conferir o extrato gerado na página e em PDF. Projeto construído com Next.js , mongoose (mongoDB), jsonwebtoken, jose, axios, redux/toolkit, bcrypt, jspdf e sass. Utilizei a API do Next.js para comunicar com o MongoDB. </br>
-
-[Projeto Locpet](https://locpet.vercel.app)
-- Esse foi um projeto de estudo na qual o usuario pode cadastrar clientes, com o nome do cliente, do seu animal, seu telefone, seu endereço, complemento e referencia, no projeto eu utilizei o Next.js, firebase para autenticação e banco de dados, jose, redux/toolkit, axios e sass. Utilizei a própria API do Next.js e para os mapas foi utilizado a Api da HERE.
- </br>
- 
-### Projetos com React
-[Acessar projetos com React](https://anderecc.com.br/projetos/projetos-React)
-- Projetos que foram feitos desde o inicio do aprendizado com React até atualmente, os projetos que mais fiquei satisfeito e que foram mais complexos foram o CoooderUsers e CoooderShop, projetos que fiz totalmente sozinho, errando e aprendendo. </br>
-
-### Projetos com Javascript
-[Acessar projetos com Javascript](https://anderecc.com.br/projetos/projetos-Javascript)</br>
-- Esses são alguns de meus projetos com Javascript, alguns eu utilizei chamadas de API, como API de conversão de moeda, API de imagens, API do dicionario de inglês, entre outras, temos também alguns projetos inspirados em e-commerce, onde podemos ver o carrinho de compras, adicionar itens, remover itens, visualizar e buscar por itens. </br>
-
-### Projetos com Html, Css e Sass
-[Acessar projetos com Html, Css e Sass](https://anderecc.com.br/projetos/projetos-Html-Css-Sass)</br>
-- Esses projetos foram feitos somente com Html, Css e Sass, alguns projetos foram feitos quando ainda estava no inicio de meus estudos na area, outros já com certo conhecimento, em todos aprendi muito, e serviram de mais para fixar os conhecimentos e ter mais noção sobre os elementos e estilização em geral, gosto muito de fazer projetos pequenos assim para me divertir e aprender cada vez mais, sempre tem algo novo para aprender.
-
-![Snake animation](https://github.com/anderecc/anderecc/blob/output/github-contribution-grid-snake.svg)
-
 
 
 
