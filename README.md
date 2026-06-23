@@ -80,10 +80,10 @@ Hoje tô tocando uns SaaS e sistemas de IA aqui na LDX. Fora isso continuo estud
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats-anderecc.vercel.app/api?username=anderecc&rank_icon=github&hide=issues&show_icons=true&include_all_commits=true&count_private=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&icon_color=06B6D4" alt="GitHub Stats" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=anderecc&rank_icon=github&hide=issues&show_icons=true&include_all_commits=true&count_private=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&icon_color=06B6D4" alt="GitHub Stats" />
 <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=anderecc&theme=tokyonight&hide_border=true&background=0D1117&ring=8B5CF6&fire=06B6D4&currStreakLabel=8B5CF6" alt="GitHub Streak" />
 
-<img height="180em" src="https://github-readme-stats-anderecc.vercel.app/api/top-langs/?username=anderecc&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&langs_count=10" alt="Top Languages" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anderecc&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=8B5CF6&langs_count=10" alt="Top Languages" />
 
 </div>
 
