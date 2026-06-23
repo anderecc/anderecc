@@ -5,7 +5,7 @@
 
 <!-- Typing animation -->
 <a href="https://github.com/anderecc">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2800&pause=900&color=8B5CF6&center=true&vCenter=true&width=600&lines=Full+Stack+Developer+%F0%9F%9A%80;TypeScript+%E2%80%A2+Go+%E2%80%A2+React+%E2%80%A2+Next.js+%E2%80%A2+Laravel;Construindo+produtos+com+IA+%F0%9F%A4%96;Sempre+aprendendo+algo+novo+%E2%9C%A8" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2800&pause=900&color=8B5CF6&center=true&vCenter=true&width=600&lines=Dev+full+stack+que+curte+resolver+problema;TS+%E2%80%A2+Go+%E2%80%A2+React+%E2%80%A2+Next+%E2%80%A2+Laravel;Vivo+construindo+coisa+com+IA+%F0%9F%A4%96;Caf%C3%A9%2C+c%C3%B3digo+e+bug+pra+ca%C3%A7ar+%E2%98%95" alt="Typing SVG" />
 </a>
 
 <!-- ===================== SOCIAL & STATS BADGES ===================== -->
@@ -19,20 +19,22 @@
 </div>
 
 <!-- ===================== ABOUT ===================== -->
-## 🧑‍💻 Sobre mim
+## 🧑‍💻 Quem sou eu
 
 ```ts
 const anderson = {
-  role:      "Full Stack Developer",
-  focus:     ["Web Apps", "APIs escaláveis", "Automação", "Produtos com IA"],
-  stack:     ["TypeScript", "Go", "React/Next.js", "Vue", "Node", "Laravel"],
-  buildingNow: "Plataformas SaaS e sistemas de IA na LDX Capital",
-  learning:  ["Go avançado", "Arquitetura de software", "LLMs & Agents"],
-  mindset:   "Aprendo rápido, gosto de desafios e de resolver problemas reais 🚀",
+  oQueFaço:        "dev full stack — front, back e o que mais precisar",
+  stackDoDia:      ["TypeScript", "Go", "React/Next", "Vue", "Node", "Laravel"],
+  tôMetidoEm:      "uns SaaS e sistemas de IA aqui na LDX",
+  curtindoAprender:["Go mais a fundo", "arquitetura", "LLMs & agents"],
+  fato:            "aprendo rápido e não fujo de desafio 🤘",
 };
 ```
 
-Sou desenvolvedor full stack apaixonado por transformar ideias em produtos. No dia a dia construo **plataformas web, APIs, automações e sistemas de IA** — do front-end ao back-end e infraestrutura. Estou sempre estudando, testando e buscando a melhor forma de entregar valor. 🤘
+Sou dev full stack e, sinceramente, o que me move é pegar um problema e fazer aquilo
+funcionar. Passo o dia construindo **plataforma web, API, automação e umas paradas com IA**
+— do front até a infra. Tô sempre testando coisa nova, quebrando, consertando e aprendendo
+no caminho. No fim das contas é isso: código é meio que meu parquinho. 🤘
 
 <br/>
 
@@ -130,7 +132,7 @@ Sou desenvolvedor full stack apaixonado por transformar ideias em produtos. No d
 
 <br/>
 
-> *"Com a programação espero mudar e construir meu futuro — aprendo rápido e acredito que minha jornada será bem-sucedida."* 🤘
+> *"Programar é como eu tô construindo o meu futuro — aprendo rápido e tenho fé que essa jornada vai longe."* 🤘
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:06B6D4,50:6366F1,100:8B5CF6&height=120&section=footer" />
 
