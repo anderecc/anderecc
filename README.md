@@ -1,11 +1,11 @@
 <!-- ===================== HEADER ===================== -->
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:6366F1,100:06B6D4&height=200&section=header&text=Anderson&fontColor=ffffff&fontSize=58&fontAlignY=38&animation=fadeIn&desc=Full%20Stack%20Developer%20%E2%80%A2%20AI%20Builder&descAlignY=60&descSize=18" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:8B5CF6,50:6366F1,100:06B6D4&height=200&section=header&text=Anderson&fontColor=ffffff&fontSize=58&fontAlignY=38&animation=fadeIn&desc=Desenvolvedor%20full%20stack&descAlignY=60&descSize=18" />
 
 <!-- Typing animation -->
 <a href="https://github.com/anderecc">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2800&pause=900&color=8B5CF6&center=true&vCenter=true&width=600&lines=Dev+full+stack+que+curte+resolver+problema;TS+%E2%80%A2+Go+%E2%80%A2+React+%E2%80%A2+Next+%E2%80%A2+Laravel;Vivo+construindo+coisa+com+IA+%F0%9F%A4%96;Caf%C3%A9%2C+c%C3%B3digo+e+bug+pra+ca%C3%A7ar+%E2%98%95" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=3000&pause=1000&color=8B5CF6&center=true&vCenter=true&width=600&lines=Desenvolvedor+full+stack;Trabalho+com+TS%2C+Go%2C+React%2C+Next+e+Laravel;Construindo+coisas+com+IA;Sempre+aprendendo+algo+novo" alt="Typing SVG" />
 </a>
 
 <!-- ===================== SOCIAL & STATS BADGES ===================== -->
@@ -19,61 +19,50 @@
 </div>
 
 <!-- ===================== ABOUT ===================== -->
-## 🧑‍💻 Quem sou eu
+## Sobre mim
 
-```ts
-const anderson = {
-  oQueFaço:        "dev full stack — front, back e o que mais precisar",
-  stackDoDia:      ["TypeScript", "Go", "React/Next", "Vue", "Node", "Laravel"],
-  tôMetidoEm:      "uns SaaS e sistemas de IA aqui na LDX",
-  curtindoAprender:["Go mais a fundo", "arquitetura", "LLMs & agents"],
-  fato:            "aprendo rápido e não fujo de desafio 🤘",
-};
-```
+Oi, sou o Anderson. Trabalho como desenvolvedor full stack e gosto de construir coisas que funcionam de verdade. No dia a dia mexo com web, APIs, automações e alguns projetos com IA, do front até a infra.
 
-Sou dev full stack e, sinceramente, o que me move é pegar um problema e fazer aquilo
-funcionar. Passo o dia construindo **plataforma web, API, automação e umas paradas com IA**
-— do front até a infra. Tô sempre testando coisa nova, quebrando, consertando e aprendendo
-no caminho. No fim das contas é isso: código é meio que meu parquinho. 🤘
+Hoje tô tocando uns SaaS e sistemas de IA aqui na LDX. Fora isso continuo estudando bastante, geralmente Go, arquitetura e essa onda de LLMs e agents. Aprendo rápido e curto pegar um problema difícil pra resolver.
 
 <br/>
 
 <!-- ===================== TECH STACK ===================== -->
-## 🛠️ Tech Stack
+## Tech Stack
 
 <table align="center">
   <tr>
-    <td align="center"><b>Linguagens</b></td>
+    <td align="center">Linguagens</td>
     <td>
       <img src="https://skillicons.dev/icons?i=ts,js,go,php,html,css" alt="languages" />
     </td>
   </tr>
   <tr>
-    <td align="center"><b>Front-end</b></td>
+    <td align="center">Front-end</td>
     <td>
       <img src="https://skillicons.dev/icons?i=react,nextjs,vue,redux,tailwind,materialui,sass,bootstrap" alt="frontend" />
     </td>
   </tr>
   <tr>
-    <td align="center"><b>Back-end</b></td>
+    <td align="center">Back-end</td>
     <td>
       <img src="https://skillicons.dev/icons?i=nodejs,express,laravel,go,graphql" alt="backend" />
     </td>
   </tr>
   <tr>
-    <td align="center"><b>Banco & Cache</b></td>
+    <td align="center">Banco e Cache</td>
     <td>
       <img src="https://skillicons.dev/icons?i=mysql,mongodb,redis,firebase,prisma,sqlite" alt="databases" />
     </td>
   </tr>
   <tr>
-    <td align="center"><b>DevOps & Cloud</b></td>
+    <td align="center">DevOps e Cloud</td>
     <td>
       <img src="https://skillicons.dev/icons?i=docker,aws,vercel,nginx,linux,git,github,postman" alt="devops" />
     </td>
   </tr>
   <tr>
-    <td align="center"><b>IA & Automação</b></td>
+    <td align="center">IA e Automação</td>
     <td>
       <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="openai" />
       <img src="https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="claude" />
@@ -87,7 +76,7 @@ no caminho. No fim das contas é isso: código é meio que meu parquinho. 🤘
 <br/>
 
 <!-- ===================== GITHUB STATS ===================== -->
-## 📊 GitHub Stats
+## Stats
 
 <div align="center">
 
@@ -106,7 +95,7 @@ no caminho. No fim das contas é isso: código é meio que meu parquinho. 🤘
 </div>
 
 <!-- ===================== TROPHIES ===================== -->
-## 🏆 Trophies
+## Troféus
 
 <div align="center">
 
@@ -115,7 +104,7 @@ no caminho. No fim das contas é isso: código é meio que meu parquinho. 🤘
 </div>
 
 <!-- ===================== SNAKE ===================== -->
-## 🐍 Contribution Snake
+## Contribuições
 
 <div align="center">
 
@@ -125,14 +114,10 @@ no caminho. No fim das contas é isso: código é meio que meu parquinho. 🤘
   <img alt="snake animation" src="https://raw.githubusercontent.com/anderecc/anderecc/output/github-contribution-grid-snake.svg" />
 </picture>
 
-</div>
-
-<!-- ===================== FOOTER ===================== -->
-<div align="center">
-
+<br/>
 <br/>
 
-> *"Programar é como eu tô construindo o meu futuro — aprendo rápido e tenho fé que essa jornada vai longe."* 🤘
+Pra mim programar é construir o meu próprio futuro. Aprendo rápido e tenho fé que essa jornada vai longe.
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:06B6D4,50:6366F1,100:8B5CF6&height=120&section=footer" />
 
