@@ -19,10 +19,6 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/whoami-dark.svg"><img alt="whoami: Full Stack Developer na LDX Capital, Engenharia de Software na UCS, sites, CRMs, apps, integrações, agentes de IA e cibersegurança" src="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/whoami-light.svg" width="100%"></picture>
 
-### `▸ como eu penso`
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/principles-dark.svg"><img alt="Sei o que faço e por que faço: especialista em IA, construção segura, bonita, moderna e organizada, fundamentos fortes, SQL/NoSQL e deploy em VPS" src="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/principles-light.svg" width="100%"></picture>
-
 ### `▸ o que eu construo`
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/builds-dark.svg"><img alt="Sites, CRMs, apps Android/iOS/PWA, integrações (Google Agenda, Sheets, WhatsApp, APIs), agentes de IA (OpenClaw, MCP) e automações" src="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/builds-light.svg" width="100%"></picture>
@@ -30,6 +26,10 @@
 ### `▸ stack`
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/stack-dark.svg"><img alt="Stack: TypeScript, JavaScript, Go, React, Next.js, Node, Express, MySQL, MongoDB, Firebase, Redis, BullMQ, Docker, Nginx, Linux, GitHub Actions, VPS, Claude, Gemini, OpenAI, MCP, OpenClaw" src="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/stack-light.svg" width="100%"></picture>
+
+### `▸ IA com critério`
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/principles-dark.svg"><img alt="IA com critério: sei o que peço à IA e por quê. Cada uso passa por o que usar, quando usar e pra que usar. Contexto primeiro, revisão humana, segurança, arquitetura e fundamentos: a IA acelera, não decide." src="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/principles-light.svg" width="100%"></picture>
 
 ### `▸ sec lab`
 
@@ -39,7 +39,7 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/flow-dark.svg"><img alt="Fluxo: entender, especificar, construir com agentes de IA, testar, entregar via CI/CD em VPS/Vercel e observar" src="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/flow-light.svg" width="100%"></picture>
 
-Spec antes de código, IA como par de programação, teste no pipeline e deploy automatizado no **GitHub Actions** pra **VPS** que eu mesmo configuro (Docker + Nginx + TLS). Segurança desde o começo.
+Construção **segura, bonita, moderna** e, acima de tudo, **organizada**: spec antes de código, teste no pipeline e deploy automatizado no **GitHub Actions** pra **VPS** que eu mesmo configuro (Docker + Nginx + TLS).
 
 ### `▸ projetos reais`
 

@@ -1,14 +1,14 @@
-// Princípios: como eu penso e construo — frase de efeito + o que/quando/pra que + 6 pilares animados.
+// IA com critério: como eu penso o uso de IA — frase de efeito + o que/quando/pra que + 6 pilares animados.
 import { doc, frame, frameCss, esc, r1, DISPLAY } from '../lib/core.mjs';
 
 const W = 860, H = 300;
 const PILLARS = [
-  ['especialista em IA', 'agentes, LLMs, automação', 'spark'],
-  ['seguro por padrão', 'menor privilégio', 'shield'],
-  ['bonito & moderno', 'UI cuidada, stack atual', 'orbit'],
-  ['organizado', 'arquitetura limpa', 'stack'],
-  ['fundamentos fortes', 'conceitos e técnicas', 'code'],
-  ['dados & deploy', 'SQL, NoSQL, VPS', 'db'],
+  ['especialista em IA', 'agentes, LLMs, MCP', 'spark'],
+  ['contexto primeiro', 'spec, AGENTS.md, dados', 'db'],
+  ['revisão humana', 'testo e entendo tudo', 'shield'],
+  ['seguro', 'segredos fora do prompt', 'lock'],
+  ['organizado', 'IA segue a arquitetura', 'stack'],
+  ['fundamentos', 'acelera, não decide', 'code'],
 ];
 
 const GLYPH = {
@@ -19,6 +19,9 @@ const GLYPH = {
 <circle r="2" fill="${t.c1}"><animateMotion dur="2.4s" repeatCount="indefinite" path="M${x + 11} ${y}A11 5 0 1 1 ${x - 11} ${y}A11 5 0 1 1 ${x + 11} ${y}"/></circle>`,
   stack: (t, x, y) => [0, 1, 2].map((i) => `<rect x="${x - 10}" y="${y - 9 + i * 7}" width="20" height="4" rx="2" fill="${[t.c1, t.c2, t.c3][i]}" class="g-al" style="animation-delay:${i * 0.25}s"/>`).join(''),
   code: (t, x, y) => `<text x="${x}" y="${y + 5}" font-size="15" font-weight="700" text-anchor="middle" fill="${t.c1}">{<tspan fill="${t.text}" class="g-blink">·</tspan>}</text>`,
+  lock: (t, x, y) => `<rect x="${x - 8}" y="${y - 2}" width="16" height="12" rx="2.5" stroke="${t.c3}" stroke-width="1.6"/>
+<path d="M${x - 5} ${y - 2}V${y - 6}A5 5 0 0 1 ${x + 5} ${y - 6}V${y - 2}" stroke="${t.c3}" stroke-width="1.6" class="g-shackle"/>
+<circle cx="${x}" cy="${y + 4}" r="1.6" fill="${t.c3}" class="g-blink"/>`,
   db: (t, x, y) => `<ellipse cx="${x}" cy="${y - 7}" rx="9" ry="3.5" stroke="${t.c2}" stroke-width="1.4"/><path d="M${x - 9} ${y - 7}V${y + 7}A9 3.5 0 0 0 ${x + 9} ${y + 7}V${y - 7}" stroke="${t.c2}" stroke-width="1.4"/>
 <path d="M${x - 9} ${y}A9 3.5 0 0 0 ${x + 9} ${y}" stroke="${t.c2}" stroke-width="1.4" class="g-blink"/>`,
 };
@@ -54,17 +57,17 @@ ${GLYPH[g](t, x + 28, y + th / 2)}
 .g-spin{transform-box:view-box;animation:spin 6s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
 .g-check{animation:chk 3s ease-in-out infinite}@keyframes chk{0%{stroke-dashoffset:10}30%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:10}}
 .g-al{animation:al 2.4s ease-in-out infinite}@keyframes al{0%,100%{transform:translateX(0)}50%{transform:translateX(3px)}}
-.g-blink{animation:gb 1.4s steps(1) infinite}@keyframes gb{50%{opacity:.15}}
+.g-blink{animation:gb 1.4s steps(1) infinite}\n.g-shackle{animation:sk 3s ease-in-out infinite}@keyframes sk{0%,60%,100%{transform:translateY(0)}70%,90%{transform:translateY(-2px)}}@keyframes gb{50%{opacity:.15}}
 .cur{animation:gb 1.1s steps(1) infinite}`;
   const defs = `<linearGradient id="qG" gradientUnits="userSpaceOnUse" x1="40" x2="400" spreadMethod="reflect"><stop offset="0" stop-color="${t.c1}"/><stop offset=".5" stop-color="${t.c2}"/><stop offset="1" stop-color="${t.c3}"/>
 <animateTransform attributeName="gradientTransform" type="translate" values="0 0;360 0;0 0" dur="12s" repeatCount="indefinite"/></linearGradient>`;
-  const body = `${frame({ w: W, h: H, t, label: 'principles.md — como eu penso' })}
-<text x="40" y="96" font-size="27" font-weight="800" fill="url(#qG)" style="font-family:${DISPLAY}">sei o que faço</text>
-<text x="40" y="134" font-size="27" font-weight="800" fill="url(#qG)" style="font-family:${DISPLAY}">e por que faço.</text>
-<text x="40" y="168" font-size="12.5" class="dim">como funciona — e como <tspan fill="${t.text}">deve</tspan> funcionar.</text>
-<rect class="cur" x="338" y="158" width="7" height="14" fill="${t.c1}"/>
-<text x="40" y="204" font-size="10" class="dim" letter-spacing="1.5">CADA DECISÃO PASSA POR</text>
+  const body = `${frame({ w: W, h: H, t, label: 'ai.md — como eu uso IA' })}
+<text x="40" y="96" font-size="26" font-weight="800" fill="url(#qG)" style="font-family:${DISPLAY}">sei o que peço</text>
+<text x="40" y="134" font-size="26" font-weight="800" fill="url(#qG)" style="font-family:${DISPLAY}">à IA, e por quê.</text>
+<text x="40" y="168" font-size="12.5" class="dim">entendo como funciona — e como <tspan fill="${t.text}">deve</tspan> funcionar.</text>
+<rect class="cur" x="400" y="158" width="7" height="14" fill="${t.c1}"/>
+<text x="40" y="204" font-size="10" class="dim" letter-spacing="1.5">CADA USO DE IA PASSA POR</text>
 ${arrows}${chips}
 ${pillars}`;
-  return doc({ w: W, h: H, t, title: 'Princípios — como eu penso', css, defs, body, fonts: ['mono', 'monoBold', 'display'] });
+  return doc({ w: W, h: H, t, title: 'IA com critério — como eu uso IA', css, defs, body, fonts: ['mono', 'monoBold', 'display'] });
 }
