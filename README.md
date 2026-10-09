@@ -19,6 +19,10 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/whoami-dark.svg"><img alt="whoami: Full Stack Developer na LDX Capital, Engenharia de Software na UCS, sites, CRMs, apps, integrações, agentes de IA e cibersegurança" src="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/whoami-light.svg" width="100%"></picture>
 
+### `▸ como eu penso`
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/principles-dark.svg"><img alt="Sei o que faço e por que faço: especialista em IA, construção segura, bonita, moderna e organizada, fundamentos fortes, SQL/NoSQL e deploy em VPS" src="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/principles-light.svg" width="100%"></picture>
+
 ### `▸ o que eu construo`
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/builds-dark.svg"><img alt="Sites, CRMs, apps Android/iOS/PWA, integrações (Google Agenda, Sheets, WhatsApp, APIs), agentes de IA (OpenClaw, MCP) e automações" src="https://raw.githubusercontent.com/anderecc/anderecc/main/assets/builds-light.svg" width="100%"></picture>

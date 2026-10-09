@@ -131,7 +131,7 @@ export function hero(t) {
     return `<circle cx="${x}" cy="${y}" r="${r1(0.4 + R() * 0.9)}" fill="${t.text}" style="animation:tw ${d}s ease-in-out ${b}s infinite"/>`;
   }).join('');
   const name = 'ANDERSON';
-  const chips = [['building @ LDX Capital', t.ok], ['full stack + IA', t.c1], ['sec student', t.c3]];
+  const chips = [['building @ LDX Capital', t.ok], ['especialista em IA', t.c1], ['sec student', t.c3]];
   let cxp = 40;
   const chipEls = chips.map(([s, c], i) => {
     const w = s.length * 11 * CHAR + 30;
@@ -179,7 +179,7 @@ ${floor(t)}
 <g font-family="${DISPLAY}" font-size="56" font-weight="800" letter-spacing="1">
 <text x="38" y="146" fill="url(#nameG)" style="font-family:${DISPLAY}">${name}</text>
 </g>
-<text x="40" y="180" font-size="15" font-weight="700">Full Stack Developer <tspan class="dim">·</tspan> IA <tspan class="dim">·</tspan> Cibersegurança</text>
+<text x="40" y="180" font-size="15" font-weight="700">Full Stack <tspan class="dim">·</tspan> Especialista em IA <tspan class="dim">·</tspan> Sec</text>
 <text x="40" y="214" font-size="15" class="c1">❯</text>
 ${ty.out}
 ${chipEls}

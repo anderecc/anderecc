@@ -2,7 +2,7 @@
 import { doc, frame, frameCss, esc, r1, mix } from '../lib/core.mjs';
 import { CERTS } from './edu.mjs';
 
-const W = 860, H = 420;
+const W = 860, H = 442;
 
 // "A" em pixel art (1 = pixel aceso, 2 = destaque)
 const LOGO = [
@@ -30,17 +30,18 @@ export function whoami(t, data = {}) {
     ['fin', 'mercado financeiro & investimentos · integrações XP e BTG'],
     ['langs', 'TypeScript · JavaScript · Go'],
     ['web', 'React · Next.js · Node · Express'],
-    ['data', 'MySQL · MongoDB · Firebase · Redis/BullMQ'],
+    ['data', 'SQL (MySQL) · NoSQL (MongoDB, Firebase) · Redis/BullMQ'],
     ['shell', 'base forte em Linux e terminal · bash · ssh'],
-    ['ops', 'Docker · Nginx · VPS · CI/CD (GitHub Actions)'],
-    ['ai', 'agentes (OpenClaw, MCP) e bots — o resto, o Claude ajuda'],
+    ['ops', 'deploy em VPS · Docker · Nginx · CI/CD (GitHub Actions)'],
+    ['ai', 'especialista: agentes (OpenClaw, MCP), LLMs e bots'],
+    ['base', 'fundamentos fortes: conceitos, técnicas, arquitetura'],
     ['sec', 'CTFs · hardening de servidor · redes e recon'],
     ['certs', `+${CERTS.length} certificados · +1.000h de cursos e projetos`],
     ['uptime', `${years} anos no GitHub${contrib}`],
   ];
 
   // logo: o "A" se monta com peças de Tetris caindo em loop
-  const cell = 13, gap = 2.5, ox = 40, oy = 110, st = cell + gap;
+  const cell = 13, gap = 2.5, ox = 40, oy = 120, st = cell + gap;
   const cells = [];
   LOGO.forEach((line, y) => [...line].forEach((ch, x) => ch !== '.' && cells.push([x, y])));
   const key = (x, y) => `${x},${y}`;

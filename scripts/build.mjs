@@ -13,6 +13,7 @@ import { buttons } from './sections/buttons.mjs';
 import { activity, fetchContrib } from './sections/activity.mjs';
 import { sec } from './sections/sec.mjs';
 import { builds } from './sections/builds.mjs';
+import { principles } from './sections/principles.mjs';
 
 const OUT = join(ROOT, 'assets');
 mkdirSync(OUT, { recursive: true });
@@ -20,7 +21,7 @@ const only = process.argv[2];
 
 const data = !only || ['activity', 'whoami'].includes(only) ? await fetchContrib() : null;
 
-const sections = { hero, ...buttons, whoami: (t) => whoami(t, data ?? {}), builds, stack, sec, flow, ...cards, edu };
+const sections = { hero, ...buttons, whoami: (t) => whoami(t, data ?? {}), principles, builds, stack, sec, flow, ...cards, edu };
 if (data) sections.activity = (t) => activity(t, data);
 else console.warn('! sem token/dados: mantendo assets/activity-* existentes');
 

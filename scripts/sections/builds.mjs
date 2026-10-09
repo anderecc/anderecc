@@ -52,13 +52,20 @@ ${i ? `<line x1="36" x2="342" y1="${y}" y2="${y}" stroke="${t.line}"/>` : ''}
 .it{animation:in .45s ease-out backwards}@keyframes in{from{opacity:0;transform:translateX(-10px)}}
 .hit{opacity:0;transform-box:fill-box;transform-origin:center;animation:hit 3.6s ease-out infinite}
 @keyframes hit{0%{opacity:.8;transform:scale(1)}30%,100%{opacity:0;transform:scale(1.35)}}
+.core-ring{transform-box:view-box;transform-origin:${cx}px ${cy}px;animation:orb 10s linear infinite}
+.core-pulse{transform-box:fill-box;transform-origin:center;animation:cp 2.4s ease-out infinite}@keyframes cp{0%{transform:scale(1);opacity:.35}100%{transform:scale(1.6);opacity:0}}
 .orb{animation:orb 24s linear infinite;transform-origin:${cx}px ${cy}px;transform-box:view-box}@keyframes orb{to{transform:rotate(360deg)}}`;
   const body = `${frame({ w: W, h: H, t, label: 'o que eu construo' })}
 ${list}
 <circle cx="${cx}" cy="${cy}" r="${R}" stroke="${t.line2}" stroke-dasharray="2 8" class="orb"/>
 ${spokes}${nodes}
-<circle cx="${cx}" cy="${cy}" r="40" fill="${t.bg2}" stroke="url(#grad)" stroke-width="1.5"/>
-<text x="${cx}" y="${cy - 2}" font-size="11" font-weight="700" text-anchor="middle">seu sistema</text>
-<text x="${cx}" y="${cy + 13}" font-size="8.5" text-anchor="middle" class="dim">integra c/ tudo</text>`;
-  return doc({ w: W, h: H, t, title: 'O que eu construo', css, body, fonts: ['mono', 'monoBold'] });
+<circle cx="${cx}" cy="${cy}" r="46" fill="none" stroke="url(#grad)" stroke-width="1.2" stroke-dasharray="40 18" class="core-ring"/>
+<circle cx="${cx}" cy="${cy}" r="38" fill="${t.c2}" class="core-pulse"/>
+<circle cx="${cx}" cy="${cy}" r="38" fill="${t.panel}" stroke="${t.line2}"/>
+<circle cx="${cx}" cy="${cy}" r="30" fill="url(#coreG)"/>
+<text x="${cx}" y="${cy - 1}" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2" class="dim">SEU</text>
+<text x="${cx}" y="${cy + 11}" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="1.5">SISTEMA</text>
+<text x="${W - 24}" y="22" font-size="10" text-anchor="end" class="dim">integra com o que tiver ↔</text>`;
+  const defs = `<radialGradient id="coreG"><stop offset="0" stop-color="${t.c2}" stop-opacity=".28"/><stop offset="1" stop-color="${t.c1}" stop-opacity=".04"/></radialGradient>`;
+  return doc({ w: W, h: H, t, title: 'O que eu construo', css, defs, body, fonts: ['mono', 'monoBold'] });
 }

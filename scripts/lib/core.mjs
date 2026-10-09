@@ -32,19 +32,21 @@ function font64(file) {
 }
 export function fontFaces(...which) {
   const map = {
-    mono: ['JB', 'jbmono-400.woff2', 400],
-    monoBold: ['JB', 'jbmono-700.woff2', 700],
-    display: ['UB', 'unbounded-800.woff2', 800],
-    displayLight: ['UB', 'unbounded-400.woff2', 400],
+    mono: [['FC', 'firacode-400.woff2', 400]],
+    monoBold: [['FC', 'firacode-700.woff2', 700]],
+    display: [['UB', 'unbounded-800.woff2', 800]],
+    displayLight: [['UB', 'unbounded-400.woff2', 400]],
   };
-  return which
-    .map((k) => map[k])
-    .map(([fam, file, w]) => `@font-face{font-family:${fam};font-weight:${w};src:url(data:font/woff2;base64,${font64(file)}) format('woff2')}`)
+  const faces = which.flatMap((k) => map[k]);
+  // glifos que a Fira Code não tem (❯ ✦ ↺ ▸) vêm de um subset mínimo da JetBrains Mono
+  if (which.some((k) => k.startsWith('mono'))) faces.push(['JBX', 'jbmono-sym.woff2', 400]);
+  return faces
+    .map(([fam, file, w]) => `@font-face{font-family:${fam};font-weight:${fam === 'JBX' ? '100 900' : w};src:url(data:font/woff2;base64,${font64(file)}) format('woff2')}`)
     .join('');
 }
-export const MONO = `JB,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace`;
+export const MONO = `FC,JBX,'Fira Code',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace`;
 export const DISPLAY = `UB,${MONO}`;
-export const CHAR = 0.6; // largura de um caractere do JetBrains Mono, em em
+export const CHAR = 0.6; // largura de um caractere da Fira Code, em em
 
 // ---------- ícones (simple-icons, CC0)
 const BRAND = {
@@ -92,7 +94,7 @@ export function doc({ w, h, t, title, css = '', fonts = ['mono'], body, defs = '
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" fill="none" role="img" aria-label="${esc(title)}">
 <title>${esc(title)}</title>
 <style>${fontFaces(...fonts)}
-text{font-family:${MONO}}text:not([fill]):not([class]){fill:${t.text}}
+text{font-family:${MONO}}:where(text:not([fill])){fill:${t.text}}
 .dim{fill:${t.dim}}.faint{fill:${t.faint}}.c1{fill:${t.c1}}.c2{fill:${t.c2}}.c3{fill:${t.c3}}.ok{fill:${t.ok}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 ${css}</style>
