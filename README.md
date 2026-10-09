@@ -5424,14 +5424,14 @@ endloop
 endfacet
 facet normal 1 0 0
 outer loop
-vertex 31 5 2.5
-vertex 31 6 2.5
+vertex 31 5 3
+vertex 31 6 3
 vertex 31 6 4.5
 endloop
 endfacet
 facet normal 1 0 0
 outer loop
-vertex 31 5 2.5
+vertex 31 5 3
 vertex 31 6 4.5
 vertex 31 5 4.5
 endloop
@@ -5648,86 +5648,100 @@ endloop
 endfacet
 facet normal 0 0 1
 outer loop
-vertex 31 6 2.5
-vertex 32 6 2.5
-vertex 32 7 2.5
+vertex 31 6 2
+vertex 32 6 2
+vertex 32 7 2
 endloop
 endfacet
 facet normal 0 0 1
 outer loop
-vertex 31 6 2.5
-vertex 32 7 2.5
-vertex 31 7 2.5
+vertex 31 6 2
+vertex 32 7 2
+vertex 31 7 2
 endloop
 endfacet
 facet normal 1 0 0
 outer loop
 vertex 32 6 0
 vertex 32 7 0
-vertex 32 7 2.5
+vertex 32 7 2
 endloop
 endfacet
 facet normal 1 0 0
 outer loop
 vertex 32 6 0
-vertex 32 7 2.5
-vertex 32 6 2.5
+vertex 32 7 2
+vertex 32 6 2
 endloop
 endfacet
 facet normal -1 0 0
 outer loop
 vertex 31 7 0
 vertex 31 6 0
-vertex 31 6 2.5
+vertex 31 6 2
 endloop
 endfacet
 facet normal -1 0 0
 outer loop
 vertex 31 7 0
-vertex 31 6 2.5
-vertex 31 7 2.5
+vertex 31 6 2
+vertex 31 7 2
 endloop
 endfacet
 facet normal 0 1 0
 outer loop
 vertex 32 7 0
 vertex 31 7 0
-vertex 31 7 2.5
+vertex 31 7 2
 endloop
 endfacet
 facet normal 0 1 0
 outer loop
 vertex 32 7 0
-vertex 31 7 2.5
-vertex 32 7 2.5
+vertex 31 7 2
+vertex 32 7 2
 endloop
 endfacet
 facet normal 0 0 1
 outer loop
-vertex 31 5 2.5
-vertex 32 5 2.5
-vertex 32 6 2.5
+vertex 31 5 3
+vertex 32 5 3
+vertex 32 6 3
 endloop
 endfacet
 facet normal 0 0 1
 outer loop
-vertex 31 5 2.5
-vertex 32 6 2.5
-vertex 31 6 2.5
+vertex 31 5 3
+vertex 32 6 3
+vertex 31 6 3
+endloop
+endfacet
+facet normal 0 1 0
+outer loop
+vertex 32 6 2
+vertex 31 6 2
+vertex 31 6 3
+endloop
+endfacet
+facet normal 0 1 0
+outer loop
+vertex 32 6 2
+vertex 31 6 3
+vertex 32 6 3
 endloop
 endfacet
 facet normal 0 -1 0
 outer loop
 vertex 31 5 0
 vertex 32 5 0
-vertex 32 5 2.5
+vertex 32 5 3
 endloop
 endfacet
 facet normal 0 -1 0
 outer loop
 vertex 31 5 0
-vertex 32 5 2.5
-vertex 31 5 2.5
+vertex 32 5 3
+vertex 31 5 3
 endloop
 endfacet
 facet normal 0 0 1
@@ -5868,20 +5882,6 @@ outer loop
 vertex 33 5 2
 vertex 33 6 3
 vertex 33 5 3
-endloop
-endfacet
-facet normal -1 0 0
-outer loop
-vertex 32 6 2.5
-vertex 32 5 2.5
-vertex 32 5 3
-endloop
-endfacet
-facet normal -1 0 0
-outer loop
-vertex 32 6 2.5
-vertex 32 5 3
-vertex 32 6 3
 endloop
 endfacet
 facet normal 0 1 0
