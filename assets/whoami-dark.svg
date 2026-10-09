@@ -30,7 +30,7 @@ text{font-family:JB,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}text:no
 <text x="335.6" y="204" font-size="14">CI/CD · VPS · Docker · Nginx · Linux</text></g><g class="ln" style="animation-delay:1.2s"><text x="260" y="229" font-size="14" font-weight="700" class="c1">sec</text>
 <text x="335.6" y="229" font-size="14">entusiasta em cibersegurança · estudando todo dia</text></g><g class="ln" style="animation-delay:1.3s"><text x="260" y="254" font-size="14" font-weight="700" class="c1">certs</text>
 <text x="335.6" y="254" font-size="14">11 certificados · 294,5h de curso</text></g><g class="ln" style="animation-delay:1.5s"><text x="260" y="279" font-size="14" font-weight="700" class="c1">uptime</text>
-<text x="335.6" y="279" font-size="14">4 anos no GitHub · 3.156 contribuições/ano</text></g><g class="ln" style="animation-delay:1.6s">
+<text x="335.6" y="279" font-size="14">4 anos no GitHub · 3.158 contribuições/ano</text></g><g class="ln" style="animation-delay:1.6s">
 <text x="260" y="304" font-size="14" font-weight="700" class="c1">status</text>
 <circle cx="340.6" cy="299" r="4" fill="#A3E635"/><circle cx="340.6" cy="299" r="4" fill="none" stroke="#A3E635" class="ping"/>
 <text x="351.6" y="304" font-size="14" class="ok">shipping</text><text x="427.6" y="304" font-size="14" class="dim">— app LDX v1.1 + IA em produção</text></g>
