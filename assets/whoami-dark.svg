@@ -55,7 +55,7 @@ text{font-family:JB,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}text:no
 <text x="335.6" y="296" font-size="14">agentes (OpenClaw, MCP) e bots — o resto, o Claude ajuda</text></g><g class="ln" style="animation-delay:2s"><text x="260" y="318" font-size="14" font-weight="700" class="c1">sec</text>
 <text x="335.6" y="318" font-size="14">CTFs · hardening de servidor · redes e recon</text></g><g class="ln" style="animation-delay:2.1s"><text x="260" y="340" font-size="14" font-weight="700" class="c1">certs</text>
 <text x="335.6" y="340" font-size="14">+11 certificados · +1.000h de cursos e projetos</text></g><g class="ln" style="animation-delay:2.3s"><text x="260" y="362" font-size="14" font-weight="700" class="c1">uptime</text>
-<text x="335.6" y="362" font-size="14">4 anos no GitHub · 3.167 contribuições/ano</text></g><g class="ln" style="animation-delay:2.4s">
+<text x="335.6" y="362" font-size="14">4 anos no GitHub · 3.168 contribuições/ano</text></g><g class="ln" style="animation-delay:2.4s">
 <text x="260" y="384" font-size="14" font-weight="700" class="c1">status</text>
 <circle cx="340.6" cy="379" r="4" fill="#34D399"/><circle cx="340.6" cy="379" r="4" fill="none" stroke="#34D399" class="ping"/>
 <text x="351.6" y="384" font-size="14" class="ok">shipping</text><text x="427.6" y="384" font-size="14" class="dim">— app LDX v1.1 + IA em produção</text></g>
