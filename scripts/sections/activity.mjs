@@ -49,7 +49,7 @@ function odometer(t, x, y, value, size, delay0 = 0) {
     } else out += `<text x="${cx}" y="${y}" font-size="${size}" font-weight="700" class="dim">${ch}</text>`;
     cx += cw;
   });
-  for (let d = 1; d < 10; d++) css += `.roll${d}{animation:r${d} 1.6s cubic-bezier(.15,.85,.25,1) both}@keyframes r${d}{from{transform:translateY(0)}to{transform:translateY(-${r1(d * lh)}px)}}`;
+  for (let d = 1; d < 10; d++) css += `.roll${d}{transform:translateY(-${r1(d * lh)}px);animation:r${d} 1.6s cubic-bezier(.15,.85,.25,1) backwards}@keyframes r${d}{from{transform:translateY(0)}}`;
   return { out, css };
 }
 
@@ -108,8 +108,8 @@ ${od.out}
   const legend = [0, 0.2, 0.45, 0.7, 1].map((k, i) => `<rect x="${W - 140 + i * 16}" y="${H - 30}" width="12" height="12" rx="3" fill="${i === 0 ? t.line : k < 0.5 ? mix(t.c1, t.c2, k * 2) : mix(t.c2, t.c3, (k - 0.5) * 2)}"/>`).join('');
 
   const css = `${frameCss}${odCss}
-.b{transform-box:fill-box;transform-origin:50% 100%;animation:rise .9s cubic-bezier(.2,1.2,.4,1) both}
-@keyframes rise{from{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:1}}
+.b{transform-box:fill-box;transform-origin:50% 100%;animation:rise .9s cubic-bezier(.2,1.2,.4,1) backwards}
+@keyframes rise{from{transform:scaleY(0);opacity:0}}
 .sw{opacity:0;animation:sw 6s ease-in-out infinite}@keyframes sw{0%,100%{opacity:0}4%{opacity:${t.name === 'dark' ? 0.55 : 0.6}}10%{opacity:0}}
 .pin{animation:pin 3s ease-in-out infinite}@keyframes pin{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}`;
   const body = `${frame({ w: W, h: H, t, label: `activity — atualizado em ${today}` })}

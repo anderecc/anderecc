@@ -9,7 +9,7 @@ text{font-family:JB,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}text:no
 .pat{transform-box:view-box;transform-origin:35px 42px;animation:pat 6s ease-in-out infinite}@keyframes pat{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(.55) rotate(40deg)}}
 .sel{animation:dash 1s linear infinite}@keyframes dash{to{stroke-dashoffset:-12}}
 .bar{transform-box:fill-box;transform-origin:bottom;animation:bar 2.4s ease-in-out infinite}@keyframes bar{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.35)}}
-.b1,.b2,.b3{opacity:0;animation:msg 6s ease-out infinite}.b2{animation-delay:1.2s}.b3{animation-delay:2.4s}
+.b1,.b2,.b3{animation:msg 6s ease-out infinite}.b2{animation-delay:1.2s}.b3{animation-delay:2.4s}
 @keyframes msg{0%{opacity:0;transform:translateY(6px)}8%,80%{opacity:1;transform:none}95%,100%{opacity:0}}
 .dot{animation:dot 1s ease-in-out infinite}@keyframes dot{50%{transform:translateY(-3px);opacity:.4}}
 .st{transform-box:fill-box;transform-origin:center;animation:ping 2.2s ease-out infinite}@keyframes ping{0%{transform:scale(1);opacity:.9}80%,100%{transform:scale(3);opacity:0}}</style>

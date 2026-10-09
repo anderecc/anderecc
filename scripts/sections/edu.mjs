@@ -46,9 +46,9 @@ ${[0, 1, 2].map((i) => `<circle cx="${230 + i * 18}" cy="62" r="${4 - i}" fill="
   }).join('');
 
   const css = `${frameCss}
-.bar{transform-box:fill-box;transform-origin:left;animation:grow 1s cubic-bezier(.2,.9,.3,1) both}
+.bar{transform-box:fill-box;transform-origin:left;animation:grow 1s cubic-bezier(.2,.9,.3,1) backwards}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.lbl{opacity:0;animation:fade .4s ease-out both}@keyframes fade{to{opacity:1}}
+.lbl{animation:fade .4s ease-out backwards}@keyframes fade{from{opacity:0}}
 .orb{animation:orb 3.6s ease-in-out infinite}@keyframes orb{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}`;
   const defs = `<linearGradient id="ucsG" x1="0" x2="1"><stop offset="0" stop-color="${t.c1}"/><stop offset="1" stop-color="${t.c3}"/></linearGradient>
 <linearGradient id="shim" gradientUnits="userSpaceOnUse" x1="20" x2="120" spreadMethod="pad"><stop offset="0" stop-color="${t.c1}" stop-opacity="0"/><stop offset=".5" stop-color="${t.c2}"/><stop offset="1" stop-color="${t.c3}" stop-opacity="0"/>

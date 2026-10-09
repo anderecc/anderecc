@@ -5,10 +5,10 @@ text{font-family:JB,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}text:no
 .dim{fill:#59636E}.faint{fill:#C9D1D9}.c1{fill:#0891B2}.c2{fill:#7C3AED}.c3{fill:#DB2777}.ok{fill:#4D7C0F}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 .trace{animation:trace 9s linear infinite}@keyframes trace{to{stroke-dashoffset:-100}}
-.px{opacity:0;transform-box:fill-box;transform-origin:center;animation:pxIn .5s cubic-bezier(.2,1.4,.4,1) both,pxGlow 4.5s ease-in-out infinite}
+.px{transform-box:fill-box;transform-origin:center;animation:pxIn .5s cubic-bezier(.2,1.4,.4,1) backwards,pxGlow 4.5s ease-in-out infinite}
 @keyframes pxIn{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
 @keyframes pxGlow{0%,100%{opacity:1}8%{opacity:.35}16%{opacity:1}}
-.ln{opacity:0;animation:lnIn .45s ease-out both}
+.ln{animation:lnIn .45s ease-out backwards}
 @keyframes lnIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
 .ping{transform-box:fill-box;transform-origin:center;animation:ping 2.2s ease-out infinite}
 @keyframes ping{0%{transform:scale(1);opacity:.9}80%,100%{transform:scale(3);opacity:0}}
@@ -30,7 +30,7 @@ text{font-family:JB,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}text:no
 <text x="335.6" y="204" font-size="14">CI/CD · VPS · Docker · Nginx · Linux</text></g><g class="ln" style="animation-delay:1.2s"><text x="260" y="229" font-size="14" font-weight="700" class="c1">sec</text>
 <text x="335.6" y="229" font-size="14">entusiasta em cibersegurança · estudando todo dia</text></g><g class="ln" style="animation-delay:1.3s"><text x="260" y="254" font-size="14" font-weight="700" class="c1">certs</text>
 <text x="335.6" y="254" font-size="14">11 certificados · 294,5h de curso</text></g><g class="ln" style="animation-delay:1.5s"><text x="260" y="279" font-size="14" font-weight="700" class="c1">uptime</text>
-<text x="335.6" y="279" font-size="14">4 anos no GitHub · 3.155 contribuições/ano</text></g><g class="ln" style="animation-delay:1.6s">
+<text x="335.6" y="279" font-size="14">4 anos no GitHub · 3.156 contribuições/ano</text></g><g class="ln" style="animation-delay:1.6s">
 <text x="260" y="304" font-size="14" font-weight="700" class="c1">status</text>
 <circle cx="340.6" cy="299" r="4" fill="#4D7C0F"/><circle cx="340.6" cy="299" r="4" fill="none" stroke="#4D7C0F" class="ping"/>
 <text x="351.6" y="304" font-size="14" class="ok">shipping</text><text x="427.6" y="304" font-size="14" class="dim">— app LDX v1.1 + IA em produção</text></g>

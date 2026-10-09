@@ -64,10 +64,10 @@ export function whoami(t, data = {}) {
   const palette = pal.map((c, i) => `<rect x="${40 + i * 23.4}" y="${oy + 12 * (cell + gap) + 18}" width="20" height="10" rx="2" fill="${c}" class="pal" style="animation-delay:${r1(i * 0.15)}s"/>`).join('');
 
   const css = `${frameCss}
-.px{opacity:0;transform-box:fill-box;transform-origin:center;animation:pxIn .5s cubic-bezier(.2,1.4,.4,1) both,pxGlow 4.5s ease-in-out infinite}
+.px{transform-box:fill-box;transform-origin:center;animation:pxIn .5s cubic-bezier(.2,1.4,.4,1) backwards,pxGlow 4.5s ease-in-out infinite}
 @keyframes pxIn{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
 @keyframes pxGlow{0%,100%{opacity:1}8%{opacity:.35}16%{opacity:1}}
-.ln{opacity:0;animation:lnIn .45s ease-out both}
+.ln{animation:lnIn .45s ease-out backwards}
 @keyframes lnIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
 .ping{transform-box:fill-box;transform-origin:center;animation:ping 2.2s ease-out infinite}
 @keyframes ping{0%{transform:scale(1);opacity:.9}80%,100%{transform:scale(3);opacity:0}}
