@@ -5,25 +5,25 @@ const W = 420, H = 236;
 
 const PROJECTS = {
   ldx: {
-    title: 'LDX Capital', sub: 'ecossistema completo', status: ['em produção', 'ok'],
+    title: 'LDX Capital', sub: 'ecossistema completo', status: ['em produção', 'c1'],
     desc: ['Portal web, API, workers com filas, IA', 'e app mobile iOS/Android com push e', 'login social. Do banco à loja de apps.'],
     chips: ['laravel', 'nodedotjs', 'redis', 'flutter', 'googlegemini', 'firebase'],
     link: 'privado · produção', viz: 'network',
   },
   gatuzii: {
-    title: 'Gatuzii', sub: 'editor de estampas', status: ['beta', 'c1'],
+    title: 'Gatuzii', sub: 'editor de estampas', status: ['beta', 'c2'],
     desc: ['Crie estampas de camiseta no browser:', 'canvas com texto e imagens e remoção', 'de fundo com IA rodando no client.'],
     chips: ['nextdotjs', 'react', 'redux', 'mui', 'vitest'],
-    link: '↗ gatuzii.vercel.app', viz: 'shirt',
+    link: '↗ gatuzii.vercel.app · beta', viz: 'shirt',
   },
   insta: {
-    title: 'instaReport', sub: 'inteligência de perfis', status: ['uso interno', 'c2'],
+    title: 'instaReport', sub: 'inteligência de perfis', status: ['uso interno', 'c3'],
     desc: ['Coleta e análise de perfis do Instagram', 'com pool de browsers headless, sessões', 'persistentes, score e export p/ Excel.'],
     chips: ['typescript', 'express', 'puppeteer', 'mysql', 'instagram'],
     link: 'privado', viz: 'bars',
   },
   bots: {
-    title: 'Agentes & Bots', sub: 'automação com IA', status: ['rodando 24/7', 'c3'],
+    title: 'Agentes & Bots', sub: 'automação com IA', status: ['rodando 24/7', 'c1'],
     desc: ['Agentes com LLM e bots de WhatsApp', 'e Instagram: webhooks, filas e fluxos', 'de atendimento que rodam sozinhos.'],
     chips: ['whatsapp', 'claude', 'googlegemini', 'redis', 'docker'],
     link: 'privado', viz: 'chat',
@@ -56,8 +56,10 @@ ${[[18, 20], [52, 20], [18, 54], [52, 54]].map(([a, b]) => `<rect x="${a - 2.5}"
       `<path d="M${x - 4} ${y + 42}H${x + 120}" stroke="${t.line2}"/>`;
   },
   chat(t, x, y) {
-    return `<g class="b1"><rect x="${x}" y="${y - 30}" width="84" height="22" rx="10" fill="${t.bg2}" stroke="${t.line2}"/><text x="${x + 10}" y="${y - 15}" font-size="9" class="dim">oi, tem horário?</text></g>
-<g class="b2"><rect x="${x + 36}" y="${y}" width="86" height="22" rx="10" fill="${t.c3}" fill-opacity=".14" stroke="${t.c3}" stroke-opacity=".5"/><text x="${x + 46}" y="${y + 15}" font-size="9" fill="${t.c3}">sim! amanhã 14h ✓</text></g>
+    const bw = (s) => r1(s.length * 9 * 0.6 + 22);
+    const q = 'oi, tem horário?', r = 'sim! amanhã às 14h', right = W - 26;
+    return `<g class="b1"><rect x="${x}" y="${y - 30}" width="${bw(q)}" height="22" rx="10" fill="${t.bg2}" stroke="${t.line2}"/><text x="${x + 11}" y="${y - 15}" font-size="9" class="dim">${q}</text></g>
+<g class="b2"><rect x="${right - bw(r)}" y="${y}" width="${bw(r)}" height="22" rx="10" fill="${t.c1}" fill-opacity=".12" stroke="${t.c1}" stroke-opacity=".45"/><text x="${right - bw(r) + 11}" y="${y + 15}" font-size="9" fill="${t.c1}">${r}</text></g>
 <g class="b3"><rect x="${x}" y="${y + 30}" width="44" height="20" rx="10" fill="${t.bg2}" stroke="${t.line2}"/>
 ${[0, 1, 2].map((i) => `<circle cx="${x + 13 + i * 9}" cy="${y + 40}" r="2.4" fill="${t.dim}" class="dot" style="animation-delay:${i * 0.18}s"/>`).join('')}</g>`;
   },
@@ -65,6 +67,7 @@ ${[0, 1, 2].map((i) => `<circle cx="${x + 13 + i * 9}" cy="${y + 40}" r="2.4" fi
 
 function card(t, p) {
   const [stLabel, stKey] = p.status;
+  // chips monocromáticos
   const sc = t[stKey];
   const sw = stLabel.length * 10 * CHAR + 26;
   const chips = p.chips.map((c, i) => {

@@ -10,10 +10,10 @@ const BUTTONS = {
 
 function button(t, b, i) {
   const w = Math.round(52 + b.label.length * 12 * CHAR), h = 36;
-  const col = b.icon ? icon(b.icon, t).color : (b.color ?? t.c1);
+  const col = t.text;
   const glyph = b.icon
     ? `<g transform="translate(14 9) scale(${18 / 24})"><path d="${icon(b.icon, t).d}" fill="${col}"/></g>`
-    : `<rect x="14" y="9" width="18" height="18" rx="4" fill="${col}"/><text x="23" y="22.5" font-size="11" font-weight="700" text-anchor="middle" fill="#fff">${b.mark}</text>`;
+    : `<rect x="14" y="9" width="18" height="18" rx="4" fill="${col}"/><text x="23" y="22.5" font-size="11" font-weight="700" text-anchor="middle" fill="${t.panel}">${b.mark}</text>`;
   const css = `.sh{animation:sh 4s ease-in-out ${i * 0.5}s infinite}@keyframes sh{0%,60%{transform:translateX(-80px)}100%{transform:translateX(${w + 80}px)}}`;
   const defs = `<linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity="${t.name === 'dark' ? 0.12 : 0.5}"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <clipPath id="c"><rect width="${w}" height="${h}" rx="18"/></clipPath>`;

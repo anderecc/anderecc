@@ -53,7 +53,7 @@ function sphere(t, { cx, cy, R }) {
   const dots = v.map((_, i) => {
     const cxs = P.map((f) => r1(f[i][0])).join(';'), cys = P.map((f) => r1(f[i][1])).join(';');
     const rs = P.map((f) => r1(1 + f[i][2] * 2.6)).join(';'), op = P.map((f) => r1(0.15 + f[i][2] * 0.85)).join(';');
-    return `<circle r="2" fill="${i % 7 === 0 ? t.c3 : t.c1}"><animate attributeName="cx" dur="${dur}" repeatCount="indefinite" values="${cxs}"/><animate attributeName="cy" dur="${dur}" repeatCount="indefinite" values="${cys}"/><animate attributeName="r" dur="${dur}" repeatCount="indefinite" values="${rs}"/><animate attributeName="opacity" dur="${dur}" repeatCount="indefinite" values="${op}"/></circle>`;
+    return `<circle r="2" fill="${i % 7 === 0 ? t.c2 : t.c1}"><animate attributeName="cx" dur="${dur}" repeatCount="indefinite" values="${cxs}"/><animate attributeName="cy" dur="${dur}" repeatCount="indefinite" values="${cys}"/><animate attributeName="r" dur="${dur}" repeatCount="indefinite" values="${rs}"/><animate attributeName="opacity" dur="${dur}" repeatCount="indefinite" values="${op}"/></circle>`;
   }).join('');
   return `<circle cx="${cx}" cy="${cy}" r="${R * 1.55}" fill="url(#halo)"/>${edges}<g filter="url(#bloom)">${dots}</g>`;
 }
@@ -64,16 +64,17 @@ function orbit(t, { cx, cy }) {
   const back = `M${cx - rx} ${cy}A${rx} ${ry} 0 0 1 ${cx + rx} ${cy}`;
   const front = `M${cx + rx} ${cy}A${rx} ${ry} 0 0 1 ${cx - rx} ${cy}`;
   const sats = ['TS', 'GO', 'AI', 'SEC'].map((s, i) => {
+    const col = i % 2 ? t.c2 : t.c1;
     const dur = 14, begin = -(dur / 4) * i;
     // primeira metade do caminho = frente (opaco), segunda = atrás da esfera (apagado)
     return `<g><animateMotion dur="${dur}s" begin="${begin}s" repeatCount="indefinite" path="${ell}"/>
 <animate attributeName="opacity" dur="${dur}s" begin="${begin}s" repeatCount="indefinite" values="1;1;.18;.18;1" keyTimes="0;.42;.55;.95;1"/>
-<circle r="11" fill="${t.panel}" stroke="${[t.c1, t.c2, t.c3, t.ok][i]}" stroke-width="1.2"/>
-<text text-anchor="middle" y="3.4" font-size="${s.length > 2 ? 7.5 : 9}" font-weight="700" fill="${[t.c1, t.c2, t.c3, t.ok][i]}">${s}</text></g>`;
+<circle r="11" fill="${t.panel}" stroke="${col}" stroke-width="1.2"/>
+<text text-anchor="middle" y="3.4" font-size="${s.length > 2 ? 7.5 : 9}" font-weight="700" fill="${col}">${s}</text></g>`;
   }).join('');
   return {
-    back: `<g transform="rotate(${rot} ${cx} ${cy})"><path d="${back}" stroke="${t.c2}" stroke-opacity=".35" stroke-dasharray="2 6" class="spin"/></g>`,
-    front: `<g transform="rotate(${rot} ${cx} ${cy})"><path d="${front}" stroke="url(#grad)" stroke-opacity=".9" stroke-dasharray="2 6" class="spin"/>${sats}</g>`,
+    back: `<g transform="rotate(${rot} ${cx} ${cy})"><path d="${back}" stroke="${t.dim}" stroke-opacity=".35" stroke-dasharray="2 6" class="spin"/></g>`,
+    front: `<g transform="rotate(${rot} ${cx} ${cy})"><path d="${front}" stroke="${t.c1}" stroke-opacity=".6" stroke-dasharray="2 6" class="spin"/>${sats}</g>`,
   };
 }
 
@@ -87,7 +88,7 @@ function floor(t) {
     const ys = [...Array(S + 1)].map((_, k) => r1(HORIZON + C / (zF - (zF - zN) * (k / S)))).join(';');
     h += `<line x1="0" x2="${W}" y1="${HORIZON}" y2="${HORIZON}"><animate attributeName="y1" values="${ys}" dur="${dur}s" begin="${-(dur / N) * i}s" repeatCount="indefinite"/><animate attributeName="y2" values="${ys}" dur="${dur}s" begin="${-(dur / N) * i}s" repeatCount="indefinite"/></line>`;
   }
-  return `<g mask="url(#floorMaskX)"><g mask="url(#floorMask)" stroke="${t.c2}" stroke-width="1" stroke-opacity="${t.name === 'dark' ? 0.55 : 0.4}">${v}${h}</g></g>
+  return `<g mask="url(#floorMaskX)"><g mask="url(#floorMask)" stroke="${t.c1}" stroke-width="1" stroke-opacity="${t.name === 'dark' ? 0.32 : 0.28}">${v}${h}</g></g>
 <line x1="0" x2="${W}" y1="${HORIZON}" y2="${HORIZON}" stroke="url(#horizon)" stroke-width="1.5"/>`;
 }
 
@@ -117,36 +118,33 @@ export function hero(t) {
   const cx = 672, cy = 156;
   const o = orbit(t, { cx, cy });
   const ty = typer(t, 66, 214, [
-    'construindo SaaS e agentes de IA',
+    'construindo SaaS, APIs e agentes de IA',
     'bots, filas e automações rodando 24/7',
     'CI/CD, VPS e deploy configurados na mão',
     'Engenharia de Software @ UCS',
+    'vivendo no terminal: linux, bash, ssh',
     'estudando cibersegurança (muito)',
   ]);
-  const stars = [...Array(46)].map(() => {
+  const stars = [...Array(22)].map(() => {
     const x = r1(R() * W), y = r1(R() * (HORIZON - 30) + 12), d = r1(2 + R() * 4), b = r1(-R() * 6);
     return `<circle cx="${x}" cy="${y}" r="${r1(0.4 + R() * 0.9)}" fill="${t.text}" style="animation:tw ${d}s ease-in-out ${b}s infinite"/>`;
   }).join('');
   const name = 'ANDERSON';
-  const chips = [['building @ LDX Capital', t.ok], ['open source & IA', t.c1], ['sec student', t.c3]];
+  const chips = [['building @ LDX Capital', t.c1], ['full stack + IA', t.c1], ['sec student', t.c2]];
   let cxp = 40;
   const chipEls = chips.map(([s, c], i) => {
     const w = s.length * 11 * CHAR + 30;
-    const g = `<g transform="translate(${r1(cxp)} 246)"><rect width="${r1(w)}" height="24" rx="12" fill="${c}" fill-opacity=".08" stroke="${c}" stroke-opacity=".45"/>
+    const g = `<g transform="translate(${r1(cxp)} 246)"><rect width="${r1(w)}" height="24" rx="12" fill="${t.bg2}" stroke="${t.line2}"/>
 <circle cx="13" cy="12" r="3.2" fill="${c}"/><circle cx="13" cy="12" r="3.2" fill="none" stroke="${c}" style="animation:ping 2.4s ease-out ${i * 0.6}s infinite;transform-origin:13px 12px;transform-box:view-box"/>
-<text x="23" y="16" font-size="11" fill="${c}">${esc(s)}</text></g>`;
+<text x="23" y="16" font-size="11" class="dim">${esc(s)}</text></g>`;
     cxp += w + 8;
     return g;
   }).join('');
 
   const css = `${frameCss}
 .spin{animation:dash 3s linear infinite}@keyframes dash{to{stroke-dashoffset:-32}}
-@keyframes tw{0%,100%{opacity:.08}50%{opacity:.7}}
+@keyframes tw{0%,100%{opacity:.05}50%{opacity:.45}}
 @keyframes ping{0%{transform:scale(1);opacity:.9}80%,100%{transform:scale(3.2);opacity:0}}
-.gl1,.gl2{opacity:0}
-.gl1{animation:gl1 5s steps(1,end) infinite}.gl2{animation:gl2 5s steps(1,end) infinite}
-@keyframes gl1{0%,86%,100%{opacity:0;transform:none}87%{opacity:.8;transform:translate(-4px,0)}89%{opacity:.8;transform:translate(3px,-1px)}91%{opacity:0}94%{opacity:.6;transform:translate(-2px,1px)}95%{opacity:0}}
-@keyframes gl2{0%,86%,100%{opacity:0;transform:none}87%{opacity:.8;transform:translate(4px,1px)}89%{opacity:.8;transform:translate(-3px,0)}91%{opacity:0}94%{opacity:.6;transform:translate(2px,-1px)}95%{opacity:0}}
 .scan{animation:scan 7s linear infinite}@keyframes scan{0%{transform:translateY(-40px)}100%{transform:translateY(${H + 40}px)}}
 .shadow{animation:sh 7s ease-in-out infinite;transform-origin:${cx}px 318px;transform-box:view-box}@keyframes sh{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(.82);opacity:.3}}
 .float{animation:fl 7s ease-in-out infinite}@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
@@ -154,12 +152,12 @@ ${ty.css}`;
 
   const defs = `
 <linearGradient id="nameG" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="420" y2="0" spreadMethod="reflect">
-<stop offset="0" stop-color="${t.c1}"/><stop offset=".5" stop-color="${t.c2}"/><stop offset="1" stop-color="${t.c3}"/>
-<animateTransform attributeName="gradientTransform" type="translate" values="0 0;420 0;0 0" dur="10s" repeatCount="indefinite"/></linearGradient>
+<stop offset="0" stop-color="${t.text}"/><stop offset=".55" stop-color="${t.text}"/><stop offset="1" stop-color="${t.c1}"/>
+<animateTransform attributeName="gradientTransform" type="translate" values="0 0;420 0;0 0" dur="16s" repeatCount="indefinite"/></linearGradient>
 <linearGradient id="sph" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${t.c1}"/><stop offset="1" stop-color="${t.c2}"/></linearGradient>
-<radialGradient id="halo"><stop offset="0" stop-color="${t.c2}" stop-opacity="${t.glow * 0.5}"/><stop offset=".55" stop-color="${t.c1}" stop-opacity="${t.glow * 0.12}"/><stop offset="1" stop-color="${t.c1}" stop-opacity="0"/></radialGradient>
-<radialGradient id="shadowG"><stop offset="0" stop-color="${t.c2}" stop-opacity=".6"/><stop offset="1" stop-color="${t.c2}" stop-opacity="0"/></radialGradient>
-<linearGradient id="horizon" x1="0" x2="1"><stop offset="0" stop-color="${t.c1}" stop-opacity="0"/><stop offset=".5" stop-color="${t.c2}"/><stop offset="1" stop-color="${t.c3}" stop-opacity="0"/></linearGradient>
+<radialGradient id="halo"><stop offset="0" stop-color="${t.c1}" stop-opacity="${t.glow * 0.5}"/><stop offset=".55" stop-color="${t.c1}" stop-opacity="${t.glow * 0.12}"/><stop offset="1" stop-color="${t.c1}" stop-opacity="0"/></radialGradient>
+<radialGradient id="shadowG"><stop offset="0" stop-color="${t.c1}" stop-opacity=".35"/><stop offset="1" stop-color="${t.c1}" stop-opacity="0"/></radialGradient>
+<linearGradient id="horizon" x1="0" x2="1"><stop offset="0" stop-color="${t.c1}" stop-opacity="0"/><stop offset=".5" stop-color="${t.c1}" stop-opacity=".7"/><stop offset="1" stop-color="${t.c1}" stop-opacity="0"/></linearGradient>
 <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#fff"/></linearGradient>
 <linearGradient id="fadeX" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".25" stop-color="#fff"/><stop offset=".75" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <mask id="floorMask"><rect x="0" y="${HORIZON}" width="${W}" height="${H - HORIZON}" fill="url(#fade)"/></mask>
@@ -178,8 +176,6 @@ ${floor(t)}
 </g>
 <text x="40" y="78" font-size="13"><tspan class="c1">~/anderecc</tspan><tspan class="dim"> on </tspan><tspan class="c2">main</tspan><tspan class="dim"> ❯ </tspan>whoami</text>
 <g font-family="${DISPLAY}" font-size="56" font-weight="800" letter-spacing="1">
-<text x="38" y="146" fill="${t.c1}" class="gl1" style="font-family:${DISPLAY}">${name}</text>
-<text x="38" y="146" fill="${t.c3}" class="gl2" style="font-family:${DISPLAY}">${name}</text>
 <text x="38" y="146" fill="url(#nameG)" style="font-family:${DISPLAY}">${name}</text>
 </g>
 <text x="40" y="180" font-size="15" font-weight="700">Full Stack Developer <tspan class="dim">·</tspan> IA <tspan class="dim">·</tspan> Cibersegurança</text>

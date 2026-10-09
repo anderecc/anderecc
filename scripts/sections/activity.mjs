@@ -1,7 +1,7 @@
-// Atividade: busca o calendário de contribuições (GraphQL), desenha uma cidade isométrica 3D
-// animada com contadores em odômetro e gera um STL que o GitHub renderiza com órbita no mouse.
+// Atividade: busca o calendário de contribuições (GraphQL) e desenha o calendário animado
+// (entrada em onda + feixe varrendo) com contadores em odômetro.
 import { execSync } from 'node:child_process';
-import { doc, frame, frameCss, esc, r1, mix, darken, DISPLAY } from '../lib/core.mjs';
+import { doc, frame, frameCss, r1, mix } from '../lib/core.mjs';
 
 const USER = process.env.PROFILE_USER || 'anderecc';
 
@@ -54,102 +54,62 @@ function odometer(t, x, y, value, size, delay0 = 0) {
 }
 
 export function activity(t, data) {
-  const W = 860, H = 440;
-  const { weeks, max } = data;
+  const W = 860, H = 340;
+  const { weeks } = data;
   const fmtDate = (s) => s.split('-').reverse().slice(0, 2).join('/');
   const today = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 
-  // tiles
-  const tiles = [[data.total, 'contribuições', 'em 12 meses'], [data.active, 'dias ativos', `de ${weeks.flat().length}`], [data.current, 'streak atual', 'dias'], [data.longest, 'maior streak', 'dias']];
+  // tiles com odômetro
+  const tiles = [[data.total, 'contribuições', '12 meses'], [data.active, 'dias ativos', `de ${weeks.flat().length}`], [data.current, 'streak atual', 'dias'], [data.longest, 'maior streak', 'dias']];
   let odCss = '', tileEls = '';
   tiles.forEach(([v, a, b], i) => {
-    const x = 24 + i * 206, c = [t.c1, t.c2, t.c3, t.ok][i];
+    const x = 24 + i * 206;
     const od = odometer(t, x + 18, 98, v, 28, 0.2 + i * 0.15);
     odCss = od.css;
     tileEls += `<rect x="${x}" y="48" width="194" height="82" rx="10" fill="${t.bg2}" stroke="${t.line}"/>
-<rect x="${x}" y="48" width="3" height="82" rx="1.5" fill="${c}"/>
+<rect x="${x}" y="48" width="3" height="82" rx="1.5" fill="${i ? t.line2 : t.c1}"/>
 ${od.out}
-<text x="${x + 18}" y="116" font-size="11" fill="${c}">${a} <tspan class="dim">${b}</tspan></text>`;
+<text x="${x + 18}" y="116" font-size="11" class="dim">${a} · ${b}</text>`;
   });
 
-  // cidade isométrica
-  const WX = [12.6, 1.5], DY = [-5.6, 6.6], ox = 92, oy = 232;
-  const P = (w, d, z = 0) => [r1(ox + w * WX[0] + d * DY[0]), r1(oy + w * WX[1] + d * DY[1] - z)];
-  const pts = (...a) => a.map((p) => p.join(',')).join(' ');
-  const cells = [];
-  weeks.forEach((wk, w) => wk.forEach((day) => cells.push({ w, d: day.weekday, c: day.contributionCount, date: day.date })));
-  cells.sort((a, b) => a.w + a.d - (b.w + b.d) || a.w - b.w);
-  const shade = t.name === 'dark' ? [0.35, 0.55] : [0.12, 0.26];
-  const g = 0.1;
-  let bars = '';
-  let bestPos = null;
-  for (const { w, d, c, date } of cells) {
-    const k = c ? Math.sqrt(c / max) : 0;
-    const h = c ? 5 + k * 70 : 1.2;
-    const col = c ? (k < 0.5 ? mix(t.c1, t.c2, k * 2) : mix(t.c2, t.c3, (k - 0.5) * 2)) : t.name === 'dark' ? t.line2 : t.line;
-    const a = [w + g, d + g], b = [w + 1 - g, d + g], cc = [w + 1 - g, d + 1 - g], dd = [w + g, d + 1 - g];
-    const T = (p) => P(p[0], p[1], h), B = (p) => P(p[0], p[1], 0);
-    const top = `<polygon points="${pts(T(a), T(b), T(cc), T(dd))}" fill="${col}"/>`;
-    const right = `<polygon points="${pts(T(b), T(cc), B(cc), B(b))}" fill="${darken(col, shade[1])}"/>`;
-    const front = `<polygon points="${pts(T(dd), T(cc), B(cc), B(dd))}" fill="${darken(col, shade[0])}"/>`;
-    const sweep = c ? `<polygon points="${pts(T(a), T(b), T(cc), T(dd))}" fill="#fff" class="sw" style="animation-delay:${r1(w * 0.07)}s"/>` : '';
-    bars += `<g class="b" style="animation-delay:${r1(0.4 + w * 0.025 + d * 0.04)}s">${right}${front}${top}${sweep}</g>`;
-    if (date === data.best.date) bestPos = T([w + 0.5, d + 0.5]);
-  }
-  // meses ao longo da borda
-  let months = '', last = '';
+  // calendário igual ao do GitHub: níveis por quartil, entrada em onda e um feixe varrendo
+  const counts = weeks.flat().map((d) => d.contributionCount).filter(Boolean).sort((a, b) => a - b);
+  const q = (p) => counts[Math.floor((counts.length - 1) * p)] ?? 1;
+  const th = [q(0.25), q(0.5), q(0.75)];
+  const level = (c) => (!c ? 0 : c <= th[0] ? 1 : c <= th[1] ? 2 : c <= th[2] ? 3 : 4);
+  const empty = t.name === 'dark' ? '#161B22' : '#EBEEF2';
+  const shades = [empty, mix(empty, t.c1, 0.3), mix(empty, t.c1, 0.52), mix(empty, t.c1, 0.76), t.c1];
+  const S = 11.5, G = 3, gx = 56, gy = 176, P = S + G;
+  let cells = '', months = '', last = '', bestCell = '';
   weeks.forEach((wk, w) => {
     const m = new Date(wk[0].date + 'T12:00:00Z').toLocaleDateString('pt-BR', { month: 'short', timeZone: 'UTC' }).replace('.', '');
-    if (m !== last && w < weeks.length - 1) { const [x, y] = P(w, 7.9); months += `<text x="${x}" y="${y + 12}" font-size="9.5" class="dim">${m}</text>`; last = m; }
+    if (m !== last && w < weeks.length - 2) { months += `<text x="${r1(gx + w * P)}" y="${gy - 10}" font-size="10" class="dim">${m}</text>`; last = m; }
+    wk.forEach((d) => {
+      const x = r1(gx + w * P), y = r1(gy + d.weekday * P), lv = level(d.contributionCount);
+      cells += `<rect x="${x}" y="${y}" width="${S}" height="${S}" rx="2.5" fill="${shades[lv]}" class="c" style="animation-delay:${r1(0.3 + w * 0.018 + d.weekday * 0.03)}s"><title>${d.contributionCount} em ${fmtDate(d.date)}</title></rect>`;
+      if (d.date === data.best.date) bestCell = `<rect x="${x - 2}" y="${y - 2}" width="${S + 4}" height="${S + 4}" rx="4" stroke="${t.text}" stroke-width="1.2" class="best"/>`;
+    });
   });
-  const best = bestPos ? `<g class="pin"><line x1="${bestPos[0]}" y1="${bestPos[1] - 4}" x2="${bestPos[0]}" y2="${bestPos[1] - 34}" stroke="${t.c3}" stroke-dasharray="2 2"/>
-<rect x="${bestPos[0] - 58}" y="${bestPos[1] - 56}" width="116" height="22" rx="11" fill="${t.panel}" stroke="${t.c3}"/>
-<text x="${bestPos[0]}" y="${bestPos[1] - 41}" font-size="10" text-anchor="middle" fill="${t.c3}">recorde: ${data.best.contributionCount} em ${fmtDate(data.best.date)}</text></g>` : '';
-  const legend = [0, 0.2, 0.45, 0.7, 1].map((k, i) => `<rect x="${W - 140 + i * 16}" y="${H - 30}" width="12" height="12" rx="3" fill="${i === 0 ? t.line : k < 0.5 ? mix(t.c1, t.c2, k * 2) : mix(t.c2, t.c3, (k - 0.5) * 2)}"/>`).join('');
+  const lastWk = weeks[weeks.length - 1], lastDay = lastWk[lastWk.length - 1];
+  const tx = r1(gx + (weeks.length - 1) * P), ty = r1(gy + lastDay.weekday * P);
+  const todayEl = `<rect x="${tx - 2}" y="${ty - 2}" width="${S + 4}" height="${S + 4}" rx="4" stroke="${t.c1}" class="ping"/>`;
+  const days = [['seg', 1], ['qua', 3], ['sex', 5]].map(([s, d]) => `<text x="24" y="${r1(gy + d * P + 9)}" font-size="9.5" class="dim">${s}</text>`).join('');
+  const gw = weeks.length * P, gh = 7 * P;
+  const legend = shades.map((c, i) => `<rect x="${W - 132 + i * 15}" y="${H - 32}" width="${S}" height="${S}" rx="2.5" fill="${c}"/>`).join('');
 
   const css = `${frameCss}${odCss}
-.b{transform-box:fill-box;transform-origin:50% 100%;animation:rise .9s cubic-bezier(.2,1.2,.4,1) backwards}
-@keyframes rise{from{transform:scaleY(0);opacity:0}}
-.sw{opacity:0;animation:sw 6s ease-in-out infinite}@keyframes sw{0%,100%{opacity:0}4%{opacity:${t.name === 'dark' ? 0.55 : 0.6}}10%{opacity:0}}
-.pin{animation:pin 3s ease-in-out infinite}@keyframes pin{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}`;
+.c{transform-box:fill-box;transform-origin:center;animation:pop .5s cubic-bezier(.2,1.3,.4,1) backwards}
+@keyframes pop{from{transform:scale(0);opacity:0}}
+.beam{animation:beam 7s ease-in-out 1.6s infinite backwards}@keyframes beam{from{transform:translateX(-80px)}to{transform:translateX(${r1(gw + 80)}px)}}
+.ping{transform-box:fill-box;transform-origin:center;animation:ping 2.2s ease-out infinite}@keyframes ping{0%{transform:scale(1);opacity:.9}80%,100%{transform:scale(1.9);opacity:0}}
+.best{animation:fade 1s ease-out 1.5s backwards}@keyframes fade{from{opacity:0}}`;
+  const defs = `<linearGradient id="beamG" x1="0" x2="1"><stop offset="0" stop-color="${t.c1}" stop-opacity="0"/><stop offset=".5" stop-color="${t.c1}" stop-opacity="${t.name === 'dark' ? 0.22 : 0.16}"/><stop offset="1" stop-color="${t.c1}" stop-opacity="0"/></linearGradient>
+<clipPath id="gridClip"><rect x="${gx - 4}" y="${gy - 4}" width="${r1(gw + 8)}" height="${r1(gh + 8)}"/></clipPath>`;
   const body = `${frame({ w: W, h: H, t, label: `activity — atualizado em ${today}` })}
 ${tileEls}
-${bars}${months}${best}
-<text x="${W - 150}" y="${H - 20}" font-size="9.5" text-anchor="end" class="dim">menos</text>${legend}<text x="${W - 54}" y="${H - 20}" font-size="9.5" class="dim">mais</text>
-<text x="24" y="${H - 20}" font-size="9.5" class="dim">cada prédio = 1 dia · altura = contribuições · gerado diariamente via GitHub Actions</text>`;
-  return doc({ w: W, h: H, t, title: 'Atividade no GitHub em 3D', css, body, fonts: ['mono', 'monoBold'] });
-}
-
-// ---------- STL: o GitHub renderiza blocos ```stl com um viewer 3D interativo
-export function skylineStl(data) {
-  const { weeks, max } = data;
-  const NW = weeks.length;
-  const H = [...Array(NW)].map(() => Array(7).fill(0));
-  weeks.forEach((wk, w) => wk.forEach((d) => { const c = d.contributionCount; H[w][d.weekday] = c ? Math.round((1 + Math.sqrt(c / max) * 17) * 2) / 2 : 0; }));
-  const hAt = (w, d) => (w < 0 || w >= NW || d < 0 || d > 6 ? 0 : H[w][d]);
-  const f = [];
-  const tri = (n, a, b, c) => f.push(`facet normal ${n.join(' ')}\nouter loop\nvertex ${a.join(' ')}\nvertex ${b.join(' ')}\nvertex ${c.join(' ')}\nendloop\nendfacet`);
-  const quad = (n, a, b, c, d) => { tri(n, a, b, c); tri(n, a, c, d); };
-  // y invertido: domingo fica no fundo
-  const Y = (d) => 6 - d;
-  for (let w = 0; w < NW; w++) for (let d = 0; d < 7; d++) {
-    const h = H[w][d];
-    if (!h) continue;
-    const x0 = w, x1 = w + 1, y0 = Y(d), y1 = Y(d) + 1;
-    quad([0, 0, 1], [x0, y0, h], [x1, y0, h], [x1, y1, h], [x0, y1, h]);
-    // laterais: só a parte que fica acima do vizinho
-    let n = hAt(w + 1, d); if (h > n) quad([1, 0, 0], [x1, y0, n], [x1, y1, n], [x1, y1, h], [x1, y0, h]);
-    n = hAt(w - 1, d); if (h > n) quad([-1, 0, 0], [x0, y1, n], [x0, y0, n], [x0, y0, h], [x0, y1, h]);
-    n = hAt(w, d - 1); if (h > n) quad([0, 1, 0], [x1, y1, n], [x0, y1, n], [x0, y1, h], [x1, y1, h]);
-    n = hAt(w, d + 1); if (h > n) quad([0, -1, 0], [x0, y0, n], [x1, y0, n], [x1, y0, h], [x0, y0, h]);
-  }
-  // base
-  const bx0 = -1, bx1 = NW + 1, by0 = -1, by1 = 8, bz = -2;
-  quad([0, 0, 1], [bx0, by0, 0], [bx1, by0, 0], [bx1, by1, 0], [bx0, by1, 0]);
-  quad([0, 0, -1], [bx0, by0, bz], [bx0, by1, bz], [bx1, by1, bz], [bx1, by0, bz]);
-  quad([0, -1, 0], [bx0, by0, bz], [bx1, by0, bz], [bx1, by0, 0], [bx0, by0, 0]);
-  quad([0, 1, 0], [bx1, by1, bz], [bx0, by1, bz], [bx0, by1, 0], [bx1, by1, 0]);
-  quad([-1, 0, 0], [bx0, by1, bz], [bx0, by0, bz], [bx0, by0, 0], [bx0, by1, 0]);
-  quad([1, 0, 0], [bx1, by0, bz], [bx1, by1, bz], [bx1, by1, 0], [bx1, by0, 0]);
-  return { stl: `solid skyline\n${f.join('\n')}\nendsolid skyline`, triangles: f.length };
+${months}${days}${cells}${bestCell}${todayEl}
+<g clip-path="url(#gridClip)"><rect class="beam" x="${gx - 80}" y="${gy - 4}" width="80" height="${r1(gh + 8)}" fill="url(#beamG)"/></g>
+<text x="24" y="${H - 22}" font-size="9.5" class="dim">recorde: <tspan fill="${t.text}">${data.best.contributionCount}</tspan> em ${fmtDate(data.best.date)} · atualizado todo dia pelo GitHub Actions</text>
+<text x="${W - 140}" y="${H - 22}" font-size="9.5" text-anchor="end" class="dim">menos</text>${legend}<text x="${W - 54}" y="${H - 22}" font-size="9.5" class="dim">mais</text>`;
+  return doc({ w: W, h: H, t, title: 'Atividade no GitHub', css, defs, body, fonts: ['mono', 'monoBold'] });
 }

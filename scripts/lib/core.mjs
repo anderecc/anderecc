@@ -7,20 +7,21 @@ import { fileURLToPath } from 'node:url';
 const HERE = dirname(fileURLToPath(import.meta.url));
 export const ROOT = join(HERE, '..', '..');
 
+// paleta sóbria: neutros + um acento (teal) e um secundário próximo (azul)
 export const THEMES = {
   dark: {
     name: 'dark',
-    bg: '#07090E', bg2: '#0C1018', panel: '#0F141E', line: '#1D2534', line2: '#2A3446',
-    text: '#E6EDF3', dim: '#8B949E', faint: '#3A4456',
-    c1: '#22D3EE', c2: '#A78BFA', c3: '#F472B6', ok: '#A3E635', warn: '#FBBF24',
-    glow: 0.55, keyTop: '#151B27', keySide: '#0A0E15', keyEdge: '#263043',
+    bg: '#07090D', bg2: '#0D1117', panel: '#0D1117', line: '#1F2630', line2: '#2B3440',
+    text: '#E6EDF3', dim: '#8B949E', faint: '#3D4652',
+    c1: '#2DD4BF', c2: '#60A5FA', c3: '#94A3B8', ok: '#2DD4BF', warn: '#94A3B8',
+    glow: 0.4, keyTop: '#131922', keySide: '#090C11', keyEdge: '#252D38',
   },
   light: {
     name: 'light',
     bg: '#FFFFFF', bg2: '#F6F8FA', panel: '#FFFFFF', line: '#D8DEE4', line2: '#C3CBD4',
     text: '#1F2328', dim: '#59636E', faint: '#C9D1D9',
-    c1: '#0891B2', c2: '#7C3AED', c3: '#DB2777', ok: '#4D7C0F', warn: '#B45309',
-    glow: 0.25, keyTop: '#FFFFFF', keySide: '#D5DBE2', keyEdge: '#C3CBD4',
+    c1: '#0F766E', c2: '#2563EB', c3: '#57606A', ok: '#0F766E', warn: '#57606A',
+    glow: 0.18, keyTop: '#FFFFFF', keySide: '#D5DBE2', keyEdge: '#C3CBD4',
   },
 };
 
@@ -58,9 +59,10 @@ const BRAND = {
   wireshark: '#1679A7', burpsuite: '#FF6633', letsencrypt: '#003A70', cloudflare: '#F38020',
   whatsapp: '#25D366', instagram: '#FF0069', ubuntu: '#E95420', hostinger: '#673DE6', digitalocean: '#0080FF',
 };
-export function icon(name, t) {
+export function icon(name, t, brand = false) {
   const svg = readFileSync(join(ROOT, 'scripts', 'icons', `${name}.svg`), 'utf8');
   const d = svg.match(/<path d="([^"]+)"/)[1];
+  if (!brand) return { d, color: t.text };
   let color = BRAND[name] ?? t.text;
   // marcas muito escuras/claras somem no fundo: usa a cor do texto
   if (t.name === 'dark' && ['#003A70', '#764ABC', '#02569B'].includes(color)) color = lighten(color, 0.45);
@@ -95,7 +97,7 @@ text{font-family:${MONO}}text:not([fill]):not([class]){fill:${t.text}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 ${css}</style>
 <defs>
-<linearGradient id="grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${t.c1}"/><stop offset=".5" stop-color="${t.c2}"/><stop offset="1" stop-color="${t.c3}"/></linearGradient>
+<linearGradient id="grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${t.c1}"/><stop offset="1" stop-color="${t.c2}"/></linearGradient>
 ${defs}</defs>
 ${body}
 </svg>`;
@@ -104,8 +106,8 @@ ${body}
 // moldura de "janela" com borda em gradiente animado, usada em todos os painéis
 export function frame({ w, h, t, label = '', rx = 14 }) {
   return `<rect x=".5" y=".5" width="${w - 1}" height="${h - 1}" rx="${rx}" fill="${t.panel}" stroke="${t.line}"/>
-<rect x=".5" y=".5" width="${w - 1}" height="${h - 1}" rx="${rx}" stroke="url(#grad)" stroke-opacity=".9" pathLength="100" stroke-dasharray="14 86" class="trace"/>
-${label ? `<g transform="translate(18 22)"><circle r="4" cx="4" cy="-4" fill="${t.c3}" opacity=".85"/><circle r="4" cx="18" cy="-4" fill="${t.warn}" opacity=".85"/><circle r="4" cx="32" cy="-4" fill="${t.ok}" opacity=".85"/>
+<rect x=".5" y=".5" width="${w - 1}" height="${h - 1}" rx="${rx}" stroke="${t.c1}" stroke-opacity=".7" pathLength="100" stroke-dasharray="10 90" class="trace"/>
+${label ? `<g transform="translate(18 22)"><circle r="4" cx="4" cy="-4" fill="${t.faint}"/><circle r="4" cx="18" cy="-4" fill="${t.faint}"/><circle r="4" cx="32" cy="-4" fill="${t.faint}"/>
 <text x="50" y="0" font-size="11" class="dim">${esc(label)}</text></g>` : ''}`;
 }
-export const frameCss = `.trace{animation:trace 9s linear infinite}@keyframes trace{to{stroke-dashoffset:-100}}`;
+export const frameCss = `.trace{animation:trace 14s linear infinite}@keyframes trace{to{stroke-dashoffset:-100}}`;

@@ -1,7 +1,7 @@
 // Formação + certificados: card da UCS e gráfico de barras animado com as horas de cada curso.
 import { doc, frame, frameCss, esc, r1, mix, DISPLAY } from '../lib/core.mjs';
 
-const W = 860, H = 326;
+const W = 860, H = 344;
 export const CERTS = [
   ['React e Redux', 54.5, 'Leonardo Moura Leitão', 'UC-0075e93e-db81-4423-8403-2ec34b56bcd6'],
   ['HTML5, CSS3 e JS', 54.5, 'Daniel Tapias Morales', 'UC-a442931f-f2e9-4102-98c9-7edff9b5db8f'],
@@ -32,13 +32,13 @@ export function edu(t) {
 <rect x="20" y="188" width="260" height="6" rx="3" fill="${t.line}"/>
 <rect x="20" y="188" width="260" height="6" rx="3" fill="url(#shim)"/>
 <text x="20" y="212" font-size="9.5" class="dim">compilando conhecimento...</text>
-${[0, 1, 2].map((i) => `<circle cx="${230 + i * 18}" cy="62" r="${4 - i}" fill="${[t.c1, t.c2, t.c3][i]}" class="orb" style="animation-delay:${-i * 1.2}s"/>`).join('')}
+${[0, 1, 2].map((i) => `<circle cx="${230 + i * 18}" cy="62" r="${4 - i}" fill="${t.c1}" opacity="${1 - i * 0.3}" class="orb" style="animation-delay:${-i * 1.2}s"/>`).join('')}
 </g>`;
 
   // gráfico de horas
   const bx = 352, lw = 168, bw = 250, rh = 19.5, by = 92;
   const bars = CERTS.map(([name, h], i) => {
-    const y = by + i * rh, w = r1((h / max) * bw), c = mix(t.c1, t.c2, i / (CERTS.length - 1));
+    const y = by + i * rh, w = r1((h / max) * bw), c = mix(t.c1, t.c2, (i / (CERTS.length - 1)) * 0.5);
     return `<text x="${bx}" y="${y + 10}" font-size="11">${esc(name)}</text>
 <rect x="${bx + lw}" y="${y + 1}" width="${bw}" height="11" rx="3" fill="${t.line}" opacity=".45"/>
 <rect x="${bx + lw}" y="${y + 1}" width="${w}" height="11" rx="3" fill="${c}" class="bar" style="animation-delay:${r1(0.2 + i * 0.07)}s"/>
@@ -50,13 +50,14 @@ ${[0, 1, 2].map((i) => `<circle cx="${230 + i * 18}" cy="62" r="${4 - i}" fill="
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .lbl{animation:fade .4s ease-out backwards}@keyframes fade{from{opacity:0}}
 .orb{animation:orb 3.6s ease-in-out infinite}@keyframes orb{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}`;
-  const defs = `<linearGradient id="ucsG" x1="0" x2="1"><stop offset="0" stop-color="${t.c1}"/><stop offset="1" stop-color="${t.c3}"/></linearGradient>
-<linearGradient id="shim" gradientUnits="userSpaceOnUse" x1="20" x2="120" spreadMethod="pad"><stop offset="0" stop-color="${t.c1}" stop-opacity="0"/><stop offset=".5" stop-color="${t.c2}"/><stop offset="1" stop-color="${t.c3}" stop-opacity="0"/>
+  const defs = `<linearGradient id="ucsG" x1="0" x2="1"><stop offset="0" stop-color="${t.text}"/><stop offset="1" stop-color="${t.c1}"/></linearGradient>
+<linearGradient id="shim" gradientUnits="userSpaceOnUse" x1="20" x2="120" spreadMethod="pad"><stop offset="0" stop-color="${t.c1}" stop-opacity="0"/><stop offset=".5" stop-color="${t.c1}"/><stop offset="1" stop-color="${t.c1}" stop-opacity="0"/>
 <animateTransform attributeName="gradientTransform" type="translate" values="-100 0;260 0" dur="2.2s" repeatCount="indefinite"/></linearGradient>`;
   const body = `${frame({ w: W, h: H, t, label: 'education.log' })}
 ${ucs}
 <text x="${bx}" y="70" font-size="10.5" class="c2" letter-spacing="1.5">CERTIFICADOS</text>
-<text x="${W - 26}" y="70" font-size="12" text-anchor="end"><tspan font-weight="700" class="c1">${CERTS.length}</tspan><tspan class="dim"> cursos · </tspan><tspan font-weight="700" class="c1">${String(total).replace('.', ',')}h</tspan><tspan class="dim"> de estudo</tspan></text>
+<text x="${W - 26}" y="70" font-size="12" text-anchor="end"><tspan font-weight="700" class="c1">+${CERTS.length}</tspan><tspan class="dim"> certificados · </tspan><tspan font-weight="700" class="c1">+1.000h</tspan><tspan class="dim"> de estudo</tspan></text>
+<text x="${bx}" y="${by + CERTS.length * rh + 12}" font-size="9.5" class="dim">${String(total).replace('.', ',')}h certificadas aqui · o resto em cursos e projetos sem certificado</text>
 ${bars}`;
   return doc({ w: W, h: H, t, title: 'Formação e certificados', css, defs, body, fonts: ['mono', 'monoBold', 'display'] });
 }
