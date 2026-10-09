@@ -125,7 +125,7 @@ export function skylineStl(data) {
   const { weeks, max } = data;
   const NW = weeks.length;
   const H = [...Array(NW)].map(() => Array(7).fill(0));
-  weeks.forEach((wk, w) => wk.forEach((d) => { const c = d.contributionCount; H[w][d.weekday] = c ? Math.round((0.5 + Math.sqrt(c / max) * 7) * 2) / 2 : 0; }));
+  weeks.forEach((wk, w) => wk.forEach((d) => { const c = d.contributionCount; H[w][d.weekday] = c ? Math.round((1 + Math.sqrt(c / max) * 17) * 2) / 2 : 0; }));
   const hAt = (w, d) => (w < 0 || w >= NW || d < 0 || d > 6 ? 0 : H[w][d]);
   const f = [];
   const tri = (n, a, b, c) => f.push(`facet normal ${n.join(' ')}\nouter loop\nvertex ${a.join(' ')}\nvertex ${b.join(' ')}\nvertex ${c.join(' ')}\nendloop\nendfacet`);
@@ -144,7 +144,7 @@ export function skylineStl(data) {
     n = hAt(w, d + 1); if (h > n) quad([0, -1, 0], [x0, y0, n], [x1, y0, n], [x1, y0, h], [x0, y0, h]);
   }
   // base
-  const bx0 = -1, bx1 = NW + 1, by0 = -1, by1 = 8, bz = -1.2;
+  const bx0 = -1, bx1 = NW + 1, by0 = -1, by1 = 8, bz = -2;
   quad([0, 0, 1], [bx0, by0, 0], [bx1, by0, 0], [bx1, by1, 0], [bx0, by1, 0]);
   quad([0, 0, -1], [bx0, by0, bz], [bx0, by1, bz], [bx1, by1, bz], [bx1, by0, bz]);
   quad([0, -1, 0], [bx0, by0, bz], [bx1, by0, bz], [bx1, by0, 0], [bx0, by0, 0]);
