@@ -7,20 +7,20 @@ import { fileURLToPath } from 'node:url';
 const HERE = dirname(fileURLToPath(import.meta.url));
 export const ROOT = join(HERE, '..', '..');
 
-// paleta sóbria: neutros + um acento (teal) e um secundário próximo (azul)
+// paleta: neutros + trio frio (cyan → índigo → roxo), usado com parcimônia
 export const THEMES = {
   dark: {
     name: 'dark',
     bg: '#07090D', bg2: '#0D1117', panel: '#0D1117', line: '#1F2630', line2: '#2B3440',
     text: '#E6EDF3', dim: '#8B949E', faint: '#3D4652',
-    c1: '#2DD4BF', c2: '#60A5FA', c3: '#94A3B8', ok: '#2DD4BF', warn: '#94A3B8',
-    glow: 0.4, keyTop: '#131922', keySide: '#090C11', keyEdge: '#252D38',
+    c1: '#22D3EE', c2: '#818CF8', c3: '#C084FC', ok: '#34D399', warn: '#FBBF24',
+    glow: 0.5, keyTop: '#131922', keySide: '#090C11', keyEdge: '#252D38',
   },
   light: {
     name: 'light',
     bg: '#FFFFFF', bg2: '#F6F8FA', panel: '#FFFFFF', line: '#D8DEE4', line2: '#C3CBD4',
     text: '#1F2328', dim: '#59636E', faint: '#C9D1D9',
-    c1: '#0F766E', c2: '#2563EB', c3: '#57606A', ok: '#0F766E', warn: '#57606A',
+    c1: '#0891B2', c2: '#4F46E5', c3: '#9333EA', ok: '#059669', warn: '#B45309',
     glow: 0.18, keyTop: '#FFFFFF', keySide: '#D5DBE2', keyEdge: '#C3CBD4',
   },
 };
@@ -57,15 +57,15 @@ const BRAND = {
   mongodb: '#47A248', vitest: '#6E9F18', ffmpeg: '#007808', rabbitmq: '#FF6600', python: '#3776AB',
   vuedotjs: '#4FC08D', modelcontextprotocol: null, kalilinux: '#557C94', owasp: null,
   wireshark: '#1679A7', burpsuite: '#FF6633', letsencrypt: '#003A70', cloudflare: '#F38020',
-  whatsapp: '#25D366', instagram: '#FF0069', ubuntu: '#E95420', hostinger: '#673DE6', digitalocean: '#0080FF',
+  chartdotjs: '#FF6384', googlecalendar: '#4285F4', googlesheets: '#34A853', googledrive: '#4285F4', gmail: '#EA4335', telegram: '#26A5E4', android: '#34A853', gnubash: null, whatsapp: '#25D366', instagram: '#FF0069', ubuntu: '#E95420', hostinger: '#673DE6', digitalocean: '#0080FF',
 };
-export function icon(name, t, brand = false) {
+export function icon(name, t, brand = true) {
   const svg = readFileSync(join(ROOT, 'scripts', 'icons', `${name}.svg`), 'utf8');
   const d = svg.match(/<path d="([^"]+)"/)[1];
   if (!brand) return { d, color: t.text };
   let color = BRAND[name] ?? t.text;
   // marcas muito escuras/claras somem no fundo: usa a cor do texto
-  if (t.name === 'dark' && ['#003A70', '#764ABC', '#02569B'].includes(color)) color = lighten(color, 0.45);
+  if (t.name === 'dark' && ['#003A70', '#764ABC', '#02569B', '#4479A1', '#3178C6'].includes(color)) color = lighten(color, 0.3);
   if (t.name === 'light' && ['#F7DF1E', '#FCC624', '#FFCA28', '#61DAFB'].includes(color)) color = darken(color, 0.25);
   return { d, color };
 }
@@ -97,7 +97,7 @@ text{font-family:${MONO}}text:not([fill]):not([class]){fill:${t.text}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 ${css}</style>
 <defs>
-<linearGradient id="grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${t.c1}"/><stop offset="1" stop-color="${t.c2}"/></linearGradient>
+<linearGradient id="grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${t.c1}"/><stop offset=".5" stop-color="${t.c2}"/><stop offset="1" stop-color="${t.c3}"/></linearGradient>
 ${defs}</defs>
 ${body}
 </svg>`;
@@ -106,7 +106,7 @@ ${body}
 // moldura de "janela" com borda em gradiente animado, usada em todos os painéis
 export function frame({ w, h, t, label = '', rx = 14 }) {
   return `<rect x=".5" y=".5" width="${w - 1}" height="${h - 1}" rx="${rx}" fill="${t.panel}" stroke="${t.line}"/>
-<rect x=".5" y=".5" width="${w - 1}" height="${h - 1}" rx="${rx}" stroke="${t.c1}" stroke-opacity=".7" pathLength="100" stroke-dasharray="10 90" class="trace"/>
+<rect x=".5" y=".5" width="${w - 1}" height="${h - 1}" rx="${rx}" stroke="url(#grad)" stroke-opacity=".85" pathLength="100" stroke-dasharray="12 88" class="trace"/>
 ${label ? `<g transform="translate(18 22)"><circle r="4" cx="4" cy="-4" fill="${t.faint}"/><circle r="4" cx="18" cy="-4" fill="${t.faint}"/><circle r="4" cx="32" cy="-4" fill="${t.faint}"/>
 <text x="50" y="0" font-size="11" class="dim">${esc(label)}</text></g>` : ''}`;
 }

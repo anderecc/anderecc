@@ -6,22 +6,29 @@ const ITEMS = [
   ['sites & landing pages', 'Next.js, SEO, performance'],
   ['CRMs & sistemas', 'painéis, permissões, relatórios'],
   ['apps', 'Android · iOS · PWA'],
-  ['integrações', 'Google Agenda, Sheets, WhatsApp, APIs'],
+  ['integrações', 'Google Agenda, Sheets, WhatsApp, XP, BTG'],
   ['agentes de IA', 'OpenClaw, MCP, LLMs'],
   ['automações', 'filas, webhooks, cron, 24/7'],
-  ['fintech & investimentos', 'integrações com XP, BTG e dados de mercado'],
 ];
 // minúsculo = ícone; senão, texto
 const NODES = ['googlecalendar', 'googlesheets', 'whatsapp', 'gmail', 'XP', 'BTG', 'googledrive', 'telegram', 'claude', 'OpenClaw', 'REST'];
 
 export function builds(t) {
-  const list = ITEMS.map(([a, b], i) => {
-    const y = 70 + i * 36;
+  // lista limpa: divisórias finas e um destaque que desliza de item em item
+  const ly = 52, lh = 42, n0 = ITEMS.length, HOLD = 1.6, DUR = n0 * HOLD;
+  const ys = [], kt = [];
+  ITEMS.forEach((_, i) => { ys.push(ly + i * lh + 4, ly + i * lh + 4); kt.push((i * HOLD + (i ? 0.25 : 0)) / DUR, ((i + 1) * HOLD) / DUR); });
+  ys.push(ly + 4); kt.push(1);
+  const hl = `<rect x="24" y="${ly + 4}" width="330" height="${lh - 8}" rx="8" fill="${t.c1}" fill-opacity="${t.name === 'dark' ? 0.07 : 0.06}" stroke="${t.c1}" stroke-opacity=".25">
+<animate attributeName="y" dur="${DUR}s" repeatCount="indefinite" values="${ys.join(';')}" keyTimes="${kt.map((k) => k.toFixed(3)).join(';')}"/></rect>`;
+  const list = hl + ITEMS.map(([a, b], i) => {
+    const y = ly + i * lh;
+    const col = [t.c1, t.c2, t.c3][i % 3];
     return `<g class="it" style="animation-delay:${r1(0.1 + i * 0.12)}s">
-<rect x="24" y="${y - 16}" width="330" height="34" rx="8" fill="${t.bg2}" stroke="${t.line}"/>
-<text x="38" y="${y + 5}" font-size="11" class="c1">${String(i + 1).padStart(2, '0')}</text>
-<text x="64" y="${y - 1}" font-size="12.5" font-weight="700">${esc(a)}</text>
-<text x="64" y="${y + 12}" font-size="10" class="dim">${esc(b)}</text></g>`;
+${i ? `<line x1="36" x2="342" y1="${y}" y2="${y}" stroke="${t.line}"/>` : ''}
+<text x="38" y="${y + 26}" font-size="10.5" font-weight="700" fill="${col}">${String(i + 1).padStart(2, '0')}</text>
+<text x="66" y="${y + 20}" font-size="12.5" font-weight="700">${esc(a)}</text>
+<text x="66" y="${y + 33}" font-size="10" class="dim">${esc(b)}</text></g>`;
   }).join('');
 
   const cx = 614, cy = 174, R = 124, n = NODES.length;
@@ -35,7 +42,7 @@ export function builds(t) {
 <circle r="2.6" fill="${t.c1}"><animateMotion dur="${dur}s" begin="${b}s" repeatCount="indefinite" path="${i % 2 ? back : p}"/></circle>`;
     const isIcon = name === name.toLowerCase();
     const face = isIcon
-      ? `<g transform="translate(${x - 9} ${y - 9}) scale(${18 / 24})"><path d="${icon(name, t).d}" fill="${t.text}"/></g>`
+      ? `<g transform="translate(${x - 9} ${y - 9}) scale(${18 / 24})"><path d="${icon(name, t).d}" fill="${icon(name, t).color}"/></g>`
       : `<text x="${x}" y="${y + 3.5}" font-size="${name.length > 5 ? 7.5 : 9}" font-weight="700" text-anchor="middle">${esc(name)}</text>`;
     nodes += `<circle cx="${x}" cy="${y}" r="20" fill="${t.panel}" stroke="${t.line2}"/>
 <circle cx="${x}" cy="${y}" r="20" fill="none" stroke="${t.c1}" class="hit" style="animation-delay:${r1(i * 0.4)}s"/>${face}`;
@@ -50,7 +57,7 @@ export function builds(t) {
 ${list}
 <circle cx="${cx}" cy="${cy}" r="${R}" stroke="${t.line2}" stroke-dasharray="2 8" class="orb"/>
 ${spokes}${nodes}
-<circle cx="${cx}" cy="${cy}" r="40" fill="${t.bg2}" stroke="${t.c1}" stroke-opacity=".6"/>
+<circle cx="${cx}" cy="${cy}" r="40" fill="${t.bg2}" stroke="url(#grad)" stroke-width="1.5"/>
 <text x="${cx}" y="${cy - 2}" font-size="11" font-weight="700" text-anchor="middle">seu sistema</text>
 <text x="${cx}" y="${cy + 13}" font-size="8.5" text-anchor="middle" class="dim">integra c/ tudo</text>`;
   return doc({ w: W, h: H, t, title: 'O que eu construo', css, body, fonts: ['mono', 'monoBold'] });

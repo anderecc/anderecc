@@ -53,7 +53,7 @@ function sphere(t, { cx, cy, R }) {
   const dots = v.map((_, i) => {
     const cxs = P.map((f) => r1(f[i][0])).join(';'), cys = P.map((f) => r1(f[i][1])).join(';');
     const rs = P.map((f) => r1(1 + f[i][2] * 2.6)).join(';'), op = P.map((f) => r1(0.15 + f[i][2] * 0.85)).join(';');
-    return `<circle r="2" fill="${i % 7 === 0 ? t.c2 : t.c1}"><animate attributeName="cx" dur="${dur}" repeatCount="indefinite" values="${cxs}"/><animate attributeName="cy" dur="${dur}" repeatCount="indefinite" values="${cys}"/><animate attributeName="r" dur="${dur}" repeatCount="indefinite" values="${rs}"/><animate attributeName="opacity" dur="${dur}" repeatCount="indefinite" values="${op}"/></circle>`;
+    return `<circle r="2" fill="${i % 7 === 0 ? t.c3 : t.c1}"><animate attributeName="cx" dur="${dur}" repeatCount="indefinite" values="${cxs}"/><animate attributeName="cy" dur="${dur}" repeatCount="indefinite" values="${cys}"/><animate attributeName="r" dur="${dur}" repeatCount="indefinite" values="${rs}"/><animate attributeName="opacity" dur="${dur}" repeatCount="indefinite" values="${op}"/></circle>`;
   }).join('');
   return `<circle cx="${cx}" cy="${cy}" r="${R * 1.55}" fill="url(#halo)"/>${edges}<g filter="url(#bloom)">${dots}</g>`;
 }
@@ -64,7 +64,7 @@ function orbit(t, { cx, cy }) {
   const back = `M${cx - rx} ${cy}A${rx} ${ry} 0 0 1 ${cx + rx} ${cy}`;
   const front = `M${cx + rx} ${cy}A${rx} ${ry} 0 0 1 ${cx - rx} ${cy}`;
   const sats = ['TS', 'GO', 'AI', 'SEC'].map((s, i) => {
-    const col = i % 2 ? t.c2 : t.c1;
+    const col = [t.c1, t.c2, t.c3, t.ok][i];
     const dur = 14, begin = -(dur / 4) * i;
     // primeira metade do caminho = frente (opaco), segunda = atrás da esfera (apagado)
     return `<g><animateMotion dur="${dur}s" begin="${begin}s" repeatCount="indefinite" path="${ell}"/>
@@ -74,7 +74,7 @@ function orbit(t, { cx, cy }) {
   }).join('');
   return {
     back: `<g transform="rotate(${rot} ${cx} ${cy})"><path d="${back}" stroke="${t.dim}" stroke-opacity=".35" stroke-dasharray="2 6" class="spin"/></g>`,
-    front: `<g transform="rotate(${rot} ${cx} ${cy})"><path d="${front}" stroke="${t.c1}" stroke-opacity=".6" stroke-dasharray="2 6" class="spin"/>${sats}</g>`,
+    front: `<g transform="rotate(${rot} ${cx} ${cy})"><path d="${front}" stroke="url(#grad)" stroke-opacity=".8" stroke-dasharray="2 6" class="spin"/>${sats}</g>`,
   };
 }
 
@@ -88,7 +88,7 @@ function floor(t) {
     const ys = [...Array(S + 1)].map((_, k) => r1(HORIZON + C / (zF - (zF - zN) * (k / S)))).join(';');
     h += `<line x1="0" x2="${W}" y1="${HORIZON}" y2="${HORIZON}"><animate attributeName="y1" values="${ys}" dur="${dur}s" begin="${-(dur / N) * i}s" repeatCount="indefinite"/><animate attributeName="y2" values="${ys}" dur="${dur}s" begin="${-(dur / N) * i}s" repeatCount="indefinite"/></line>`;
   }
-  return `<g mask="url(#floorMaskX)"><g mask="url(#floorMask)" stroke="${t.c1}" stroke-width="1" stroke-opacity="${t.name === 'dark' ? 0.32 : 0.28}">${v}${h}</g></g>
+  return `<g mask="url(#floorMaskX)"><g mask="url(#floorMask)" stroke="${t.c2}" stroke-width="1" stroke-opacity="${t.name === 'dark' ? 0.45 : 0.32}">${v}${h}</g></g>
 <line x1="0" x2="${W}" y1="${HORIZON}" y2="${HORIZON}" stroke="url(#horizon)" stroke-width="1.5"/>`;
 }
 
@@ -131,7 +131,7 @@ export function hero(t) {
     return `<circle cx="${x}" cy="${y}" r="${r1(0.4 + R() * 0.9)}" fill="${t.text}" style="animation:tw ${d}s ease-in-out ${b}s infinite"/>`;
   }).join('');
   const name = 'ANDERSON';
-  const chips = [['building @ LDX Capital', t.c1], ['full stack + IA', t.c1], ['sec student', t.c2]];
+  const chips = [['building @ LDX Capital', t.ok], ['full stack + IA', t.c1], ['sec student', t.c3]];
   let cxp = 40;
   const chipEls = chips.map(([s, c], i) => {
     const w = s.length * 11 * CHAR + 30;
@@ -153,12 +153,12 @@ ${ty.css}`;
 
   const defs = `
 <linearGradient id="nameG" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="420" y2="0" spreadMethod="reflect">
-<stop offset="0" stop-color="${t.text}"/><stop offset=".55" stop-color="${t.text}"/><stop offset="1" stop-color="${t.c1}"/>
+<stop offset="0" stop-color="${t.c1}"/><stop offset=".5" stop-color="${t.c2}"/><stop offset="1" stop-color="${t.c3}"/>
 <animateTransform attributeName="gradientTransform" type="translate" values="0 0;420 0;0 0" dur="16s" repeatCount="indefinite"/></linearGradient>
 <linearGradient id="sph" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${t.c1}"/><stop offset="1" stop-color="${t.c2}"/></linearGradient>
-<radialGradient id="halo"><stop offset="0" stop-color="${t.c1}" stop-opacity="${t.glow * 0.5}"/><stop offset=".55" stop-color="${t.c1}" stop-opacity="${t.glow * 0.12}"/><stop offset="1" stop-color="${t.c1}" stop-opacity="0"/></radialGradient>
+<radialGradient id="halo"><stop offset="0" stop-color="${t.c2}" stop-opacity="${t.glow * 0.5}"/><stop offset=".55" stop-color="${t.c1}" stop-opacity="${t.glow * 0.12}"/><stop offset="1" stop-color="${t.c1}" stop-opacity="0"/></radialGradient>
 <radialGradient id="shadowG"><stop offset="0" stop-color="${t.c1}" stop-opacity=".35"/><stop offset="1" stop-color="${t.c1}" stop-opacity="0"/></radialGradient>
-<linearGradient id="horizon" x1="0" x2="1"><stop offset="0" stop-color="${t.c1}" stop-opacity="0"/><stop offset=".5" stop-color="${t.c1}" stop-opacity=".7"/><stop offset="1" stop-color="${t.c1}" stop-opacity="0"/></linearGradient>
+<linearGradient id="horizon" x1="0" x2="1"><stop offset="0" stop-color="${t.c1}" stop-opacity="0"/><stop offset=".5" stop-color="${t.c2}"/><stop offset="1" stop-color="${t.c3}" stop-opacity="0"/></linearGradient>
 <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#fff"/></linearGradient>
 <linearGradient id="fadeX" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".25" stop-color="#fff"/><stop offset=".75" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <mask id="floorMask"><rect x="0" y="${HORIZON}" width="${W}" height="${H - HORIZON}" fill="url(#fade)"/></mask>

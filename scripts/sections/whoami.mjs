@@ -39,15 +39,37 @@ export function whoami(t, data = {}) {
     ['uptime', `${years} anos no GitHub${contrib}`],
   ];
 
-  // logo
-  const cell = 13, gap = 2.5, ox = 40, oy = 110;
-  let px = '';
-  LOGO.forEach((line, y) => [...line].forEach((ch, x) => {
-    if (ch === '.') return;
-    const k = (x + y) / (LOGO.length + line.length);
-    const c = ch === '2' ? t.c2 : mix(t.c1, t.c2, k * 0.6);
-    px += `<rect x="${ox + x * (cell + gap)}" y="${oy + y * (cell + gap)}" width="${cell}" height="${cell}" rx="2" fill="${c}" style="animation-delay:${r1((x + y) * 0.05)}s,${r1(1.6 + (x + y) * 0.07)}s" class="px"/>`;
-  }));
+  // logo: o "A" se monta com peças de Tetris caindo em loop
+  const cell = 13, gap = 2.5, ox = 40, oy = 110, st = cell + gap;
+  const cells = [];
+  LOGO.forEach((line, y) => [...line].forEach((ch, x) => ch !== '.' && cells.push([x, y])));
+  const key = (x, y) => `${x},${y}`;
+  const free = new Set(cells.map(([x, y]) => key(x, y)));
+  // agrupa de baixo pra cima em peças de até 4 blocos (direita, esquerda, cima)
+  const pieces = [];
+  [...cells].sort((a, b) => b[1] - a[1] || a[0] - b[0]).forEach(([x, y]) => {
+    if (!free.has(key(x, y))) return;
+    const piece = [[x, y]]; free.delete(key(x, y));
+    for (let i = 0; i < piece.length && piece.length < 4; i++) {
+      const [px0, py0] = piece[i];
+      for (const [nx, ny] of [[px0 + 1, py0], [px0 - 1, py0], [px0, py0 - 1]]) {
+        if (piece.length < 4 && free.has(key(nx, ny))) { piece.push([nx, ny]); free.delete(key(nx, ny)); }
+      }
+    }
+    pieces.push(piece);
+  });
+  const T = 12, SLOT = Math.min(0.3, 7 / pieces.length), FALL = 0.5;
+  const pc = (sec) => `${((sec / T) * 100).toFixed(2)}%`;
+  const tcols = [t.c1, t.c2, t.c3, t.ok];
+  let ghost = '', px = '', tetCss = '';
+  cells.forEach(([x, y]) => { ghost += `<rect x="${ox + x * st}" y="${oy + y * st}" width="${cell}" height="${cell}" rx="2" fill="${t.line}" opacity=".55"/>`; });
+  pieces.forEach((piece, i) => {
+    const top = Math.min(...piece.map(([, y]) => y));
+    const rows = top + 3, D = r1(rows * st), s0 = i * SLOT;
+    const col = tcols[i % tcols.length];
+    px += `<g class="tp${i}">${piece.map(([x, y]) => `<rect x="${ox + x * st}" y="${oy + y * st}" width="${cell}" height="${cell}" rx="2" fill="${col}"/>`).join('')}</g>`;
+    tetCss += `.tp${i}{animation:tp${i} ${T}s linear infinite}@keyframes tp${i}{0%,${pc(s0)}{opacity:0;transform:translateY(-${D}px)}${pc(s0 + 0.01)}{opacity:1;transform:translateY(-${D}px);animation-timing-function:steps(${rows},end)}${pc(s0 + FALL)}{opacity:1;transform:none}${pc(10.4)}{opacity:1;transform:none}${pc(10.6)}{opacity:.25}${pc(10.8)}{opacity:1}${pc(11)}{opacity:.25}${pc(11.2)}{opacity:1}${pc(11.7)},100%{opacity:0;transform:none}}\n`;
+  });
 
   const tx = 260, ty = 58, lh = 22;
   const kw = 9 * 8.4;
@@ -65,14 +87,11 @@ export function whoami(t, data = {}) {
 <text x="${tx + kw + 16}" y="${sy}" font-size="14" class="ok">shipping</text><text x="${tx + kw + 92}" y="${sy}" font-size="14" class="dim">— app LDX v1.1 + IA em produção</text></g>`;
 
   // paleta estilo neofetch
-  const pal = [t.c1, mix(t.c1, t.c2, 0.5), t.c2, t.text, t.dim, t.c3, t.faint, t.line2];
+  const pal = [t.c1, t.c2, t.c3, t.ok, t.warn, t.text, t.dim, t.faint];
   const palette = pal.map((c, i) => `<rect x="${40 + i * 23.4}" y="${oy + 12 * (cell + gap) + 18}" width="20" height="10" rx="2" fill="${c}" class="pal" style="animation-delay:${r1(i * 0.15)}s"/>`).join('');
 
   const css = `${frameCss}
-.px{transform-box:fill-box;transform-origin:center;animation:pxIn .5s cubic-bezier(.2,1.4,.4,1) backwards,pxGlow 4.5s ease-in-out infinite}
-@keyframes pxIn{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
-@keyframes pxGlow{0%,100%{opacity:1}8%{opacity:.55}16%{opacity:1}}
-.ln{animation:lnIn .45s ease-out backwards}
+${tetCss}.ln{animation:lnIn .45s ease-out backwards}
 @keyframes lnIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
 .ping{transform-box:fill-box;transform-origin:center;animation:ping 2.2s ease-out infinite}
 @keyframes ping{0%{transform:scale(1);opacity:.9}80%,100%{transform:scale(3);opacity:0}}
@@ -80,7 +99,7 @@ export function whoami(t, data = {}) {
 .cur{animation:blink 1.1s steps(1) infinite}@keyframes blink{50%{opacity:0}}`;
 
   const body = `${frame({ w: W, h: H, t, label: 'neofetch --anderecc' })}
-${px}${palette}${lines}
+${ghost}${px}${palette}${lines}
 <rect class="cur" x="${tx}" y="${sy + 12}" width="8.4" height="15" fill="${t.c1}"/>`;
   return doc({ w: W, h: H, t, title: 'whoami — Anderson', css, body, fonts: ['mono', 'monoBold'] });
 }
