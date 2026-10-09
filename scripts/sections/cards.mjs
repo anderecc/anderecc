@@ -5,8 +5,8 @@ const W = 420, H = 236;
 
 const PROJECTS = {
   ldx: {
-    title: 'LDX Capital', sub: 'ecossistema completo', status: ['em produção', 'c1'],
-    desc: ['Portal web, API, workers com filas, IA', 'e app mobile iOS/Android com push e', 'login social. Do banco à loja de apps.'],
+    title: 'LDX Capital', sub: 'ecossistema de investimentos', status: ['em produção', 'c1'],
+    desc: ['Portal, API com integrações XP e BTG,', 'workers com filas, IA e app mobile', 'iOS/Android. Do banco à loja de apps.'],
     chips: ['laravel', 'nodedotjs', 'redis', 'flutter', 'googlegemini', 'firebase'],
     link: 'privado · produção', viz: 'network',
   },

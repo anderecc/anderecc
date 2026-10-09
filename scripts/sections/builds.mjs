@@ -9,13 +9,14 @@ const ITEMS = [
   ['integrações', 'Google Agenda, Sheets, WhatsApp, APIs'],
   ['agentes de IA', 'OpenClaw, MCP, LLMs'],
   ['automações', 'filas, webhooks, cron, 24/7'],
+  ['fintech & investimentos', 'integrações com XP, BTG e dados de mercado'],
 ];
 // minúsculo = ícone; senão, texto
-const NODES = ['googlecalendar', 'googlesheets', 'whatsapp', 'gmail', 'googledrive', 'telegram', 'claude', 'OpenClaw', 'REST'];
+const NODES = ['googlecalendar', 'googlesheets', 'whatsapp', 'gmail', 'XP', 'BTG', 'googledrive', 'telegram', 'claude', 'OpenClaw', 'REST'];
 
 export function builds(t) {
   const list = ITEMS.map(([a, b], i) => {
-    const y = 74 + i * 40;
+    const y = 70 + i * 36;
     return `<g class="it" style="animation-delay:${r1(0.1 + i * 0.12)}s">
 <rect x="24" y="${y - 16}" width="330" height="34" rx="8" fill="${t.bg2}" stroke="${t.line}"/>
 <text x="38" y="${y + 5}" font-size="11" class="c1">${String(i + 1).padStart(2, '0')}</text>
@@ -23,7 +24,7 @@ export function builds(t) {
 <text x="64" y="${y + 12}" font-size="10" class="dim">${esc(b)}</text></g>`;
   }).join('');
 
-  const cx = 612, cy = 172, R = 118, n = NODES.length;
+  const cx = 614, cy = 174, R = 124, n = NODES.length;
   let spokes = '', nodes = '';
   NODES.forEach((name, i) => {
     const a = -Math.PI / 2 + (i / n) * Math.PI * 2;
@@ -36,8 +37,8 @@ export function builds(t) {
     const face = isIcon
       ? `<g transform="translate(${x - 9} ${y - 9}) scale(${18 / 24})"><path d="${icon(name, t).d}" fill="${t.text}"/></g>`
       : `<text x="${x}" y="${y + 3.5}" font-size="${name.length > 5 ? 7.5 : 9}" font-weight="700" text-anchor="middle">${esc(name)}</text>`;
-    nodes += `<circle cx="${x}" cy="${y}" r="22" fill="${t.panel}" stroke="${t.line2}"/>
-<circle cx="${x}" cy="${y}" r="22" fill="none" stroke="${t.c1}" class="hit" style="animation-delay:${r1(i * 0.4)}s"/>${face}`;
+    nodes += `<circle cx="${x}" cy="${y}" r="20" fill="${t.panel}" stroke="${t.line2}"/>
+<circle cx="${x}" cy="${y}" r="20" fill="none" stroke="${t.c1}" class="hit" style="animation-delay:${r1(i * 0.4)}s"/>${face}`;
   });
 
   const css = `${frameCss}

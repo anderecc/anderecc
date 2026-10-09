@@ -121,6 +121,7 @@ export function hero(t) {
     'construindo SaaS, APIs e agentes de IA',
     'bots, filas e automações rodando 24/7',
     'CI/CD, VPS e deploy configurados na mão',
+    'fintech: integrações com XP e BTG',
     'Engenharia de Software @ UCS',
     'vivendo no terminal: linux, bash, ssh',
     'estudando cibersegurança (muito)',

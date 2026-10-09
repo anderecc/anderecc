@@ -2,7 +2,7 @@
 import { doc, frame, frameCss, esc, r1, mix } from '../lib/core.mjs';
 import { CERTS } from './edu.mjs';
 
-const W = 860, H = 398;
+const W = 860, H = 420;
 
 // "A" em pixel art (1 = pixel aceso, 2 = destaque)
 const LOGO = [
@@ -27,6 +27,7 @@ export function whoami(t, data = {}) {
     ['role', 'Full Stack Developer @ LDX Capital'],
     ['edu', 'Engenharia de Software · UCS (cursando)'],
     ['builds', 'sites · CRMs · apps Android/iOS/PWA · integrações'],
+    ['fin', 'mercado financeiro & investimentos · integrações XP e BTG'],
     ['langs', 'TypeScript · JavaScript · Go'],
     ['web', 'React · Next.js · Node · Express'],
     ['data', 'MySQL · MongoDB · Firebase · Redis/BullMQ'],
@@ -39,7 +40,7 @@ export function whoami(t, data = {}) {
   ];
 
   // logo
-  const cell = 13, gap = 2.5, ox = 40, oy = 100;
+  const cell = 13, gap = 2.5, ox = 40, oy = 110;
   let px = '';
   LOGO.forEach((line, y) => [...line].forEach((ch, x) => {
     if (ch === '.') return;
